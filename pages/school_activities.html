@@ -231,8 +231,11 @@
             Ramadan: [
                 {
                     type: "video",
-                    src: "../AolsActivies/rk.mp4",
-                    title: "Ramadan Kareem Using AI By Ahmed Ramdan"
+    src: "../AolsActivies/rk.mp4",
+    description: {
+        en: "Ramadan Kareem Using AI By Ahmed Ramdan",
+        ar: "رمضان كريم باستخدام الذكاء الإصطناعي - أحمد رمضان"
+    }
                 }
             ],
 
@@ -240,15 +243,23 @@
                 {
                     type: "video",
                     src: "../AolsActivies/Em.mp4",
-                    title: "A tour of The Grand Egyptian Museum"
+                    title: "A tour of The Grand Egyptian Museum",
+                    description: {
+                        en: "A tour of The Grand Egyptian Museum",
+                        ar: "جولة نعريفية في المتحف المصري الكبير"
+                    }
                 }
             ],
 
             nd: [
                 {
                     type: "video",
-                    src: "../AolsActivies/SM.mp4",
-                    title: "New Decor Using AI By Saba Moustafa"
+                    src: "../AolsActivies/sm.mp4",
+                    title: "New Decor Using AI By Saba Mostafa",
+                    description: {
+                        en: "New Decor using AI By Saba Mostafa",
+                        ar: "ديكورد جديد باستخدام الذكاء الاصطناعي - صبي رمضان ",
+                    }
                 }
             ],
 
@@ -318,7 +329,13 @@
                         data-index="${index}">`
                     }
 
-                <h3>${isVideo ? (item.title || "") : cardLabel}</h3>
+                <h3>
+    ${
+        isVideo
+            ? (item.description?.[lang] || "")
+            : cardLabel
+    }
+</h3>
 
             </div>
 
