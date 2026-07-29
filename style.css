@@ -24,6 +24,8 @@ html {
     scroll-behavior: smooth;
 }
 
+
+
 * {
     margin: 0;
     padding: 0;
@@ -1920,4 +1922,24 @@ html[dir="rtl"] #navbar ul{
 header{
     direction: ltr !important;
 }
+
+html[dir="rtl"] #navbar.active ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        width: 100%;
+    }
+
+    html[dir="rtl"] #navbar.active ul li{
+        width: 100%;
+        text-align: center;
+    }
+
+    html[dir="rtl"] #navbar.active ul li a{
+        display: block;
+        width: 100%;
+    }
+
+
 
