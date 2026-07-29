@@ -645,29 +645,30 @@ header.scrolled .menu-btn {
 
 
 @media (max-width:768px) {
-   .menu-btn{
-    display: block;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: 1002;
+    .menu-btn{
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 1002;
+    }
 
-
-    nav {
+    /* Navbar */
+    nav{
         position: fixed;
         top: 75px;
         right: -300px;
         width: 280px;
         height: 100vh;
-        background: rgba(255, 255, 255, .96);
+        background: rgba(255,255,255,.96);
         backdrop-filter: blur(20px);
-        box-shadow: -4px 0 30px rgba(0, 0, 0, .12);
-        transition: .4s cubic-bezier(.4, 0, .2, 1);
-        border-left: 1px solid rgba(37, 99, 235, .15);
+        box-shadow: -4px 0 30px rgba(0,0,0,.12);
+        transition: .4s cubic-bezier(.4,0,.2,1);
+        border-left: 1px solid rgba(37,99,235,.15);
         display: flex;
         flex-direction: column;
     }
 
-    nav.active {
+    nav.active{
         right: 0;
     }
 
@@ -826,8 +827,6 @@ header.scrolled .menu-btn {
 }
 
 /* Navbar */
-
-}
 
 /* Menu Button */
 
