@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Mr. Abdelrahman Rashed
+    </title>
+    <link href="../images/Orabi.png" rel="icon" type="image/png" />
+    <link href="../style.css" rel="stylesheet" />
+    <link href="Mrabdo.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <!-- ================= IMAGE POPUP ================= -->
+    <div class="image-modal" id="imageModal">
+        <span class="close">
+            ×
+        </span>
+        <div class="modal-content">
+            <img alt="" id="popupImage" src="" />
+            <video controls="" id="popupVideo" style="display:none;">
+                <source src="" type="video/mp4" />
+            </video>
+            <p id="popupText">
+            </p>
+        </div>
+    </div>
+    <!-- ================= HEADER ================= -->
+    <header>
+        <a class="logo" href="../index.html">
+            A.O.L.S
+        </a>
+        <!-- ============================================================ -->
+        <!--  NAV  #navbar  -->
+        <!-- ============================================================ -->
+        <nav id="navbar">
+            <ul>
+                <li>
+                    <a data-i18n="nav-home" href="../index.html">
+                        HOME
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-principals" href="../index.html#members">
+                        PRINCIPALS
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-class" href="../index.html#stage">
+                        CLASS
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-about" href="../pages/about.html">
+                        ABOUT
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-contact" href="../pages/contact.html">
+                        CONTACT
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <button class="lang-switch" id="langSwitch" type="button">
+                <span class="ls-en">
+                    EN
+                </span>
+                <span class="ls-ar">
+                    AR
+                </span>
+            </button>
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars">
+                </i>
+            </div>
+        </div>
+    </header>
+    <!-- ================= MRABDO ================= -->
+    <section class="mrabdo-activities">
+        <div class="classes-title">
+            <img alt="Mr. Abdo" class="teacher-photo" src="../images/mrabdo.png" />
+            <h2 data-i18n="mrabdo-title">
+                Mr. Abdelrahman Rashed Achievements
+            </h2>
+            <p data-i18n="mrabdo-desc">
+                Select an achievement to view its gallery.
+            </p>
+        </div>
+        <!-- ================= DROPDOWN ================= -->
+        <div class="achievement-dropdown">
+            <button class="achievement-btn" id="achievementBtn">
+                <span data-i18n-html="achievement-dropdown-title" id="achievementTitle">
+                    <i class="fa-solid fa-images">
+                    </i>
+                    Mr. Abdelrahman Rashed Achievements
+                </span>
+                <i class="fa-solid fa-chevron-down arrow">
+                </i>
+            </button>
+            <div class="achievement-menu" id="achievementMenu">
+                <button data-gallery="Ramadan" data-i18n="achievement-ramadan">
+                    Ramadan Celebration
+                </button>
+                <button data-gallery="MothersDay" data-i18n="achievement-mothersday">
+                    Mother's Day
+                </button>
+                <button data-gallery="Masjid" data-i18n="achievement-masjid">
+                    Building a Mosque
+                </button>
+                <button data-gallery="Thelittlecreator" data-i18n="achievement-creator">
+                    Creative Child
+                </button>
+                <button data-gallery="Kgvisits" data-i18n="achievement-kgvisits">
+                    KG Visits
+                </button>
+                <button data-gallery="camera" data-i18n="achievement-camera">
+                    School Insurance
+                </button>
+                <button data-gallery="Latestbuildings" data-i18n="achievement-buildings">
+                    Latest Buildings
+                </button>
+                <button data-gallery="Schooldecoration" data-i18n="achievement-decoration">
+                    School Decoration
+                </button>
+                <button data-gallery="Schoolagriculture" data-i18n="achievement-agriculture">
+                    School Agriculture
+                </button>
+                <button data-gallery="Honoring" data-i18n="achievement-honoring">
+                    Honoring
+                </button>
+                <button data-gallery="HonoringMrAbdelRahman" data-i18n="achievement-honoring-mr">
+                    Honoring Mr. Abdelrahman
+                </button>
+                <button data-gallery="party" data-i18n="achievement-party">
+                    Party
+                </button>
+                <button data-gallery="dp" data-i18n="achievement-dp">
+                    Dream Park
+                </button>
+                <button data-gallery="Hospital" data-i18n="achievement-hospital">
+                    57357 Hospital
+                </button>
+                <button data-gallery="Aml" data-i18n="achievement-aml">
+                    Amal Mubarak's Visit
+                </button>
+                <button data-gallery="Corridor" data-i18n="achievement-corridor">
+                    Corridor
+                </button>
+                <button data-gallery="Theatercompetition" data-i18n="achievement-theater">
+                    Theater Competition
+                </button>
+                <button data-gallery="ChildhoodDay" data-i18n="achievement-childhood">
+                    Childhood Day
+                </button>
+                <button data-gallery="camp" data-i18n="achievement-camp">
+                    School Camp
+                </button>
+            </div>
+        </div>
+        <!-- ================= GALLERY ================= -->
+        <div class="championship-gallery" id="galleryContainer">
+            <!-- سيتم إنشاء الكروت تلقائياً بالجافاسكربت -->
+        </div>
+    </section>
+
+<script src="../script.js"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const btn = document.getElementById("achievementBtn");
+    const menu = document.getElementById("achievementMenu");
+    const title = document.getElementById("achievementTitle");
+    const gallery = document.getElementById("galleryContainer");
+
+    // يقرأ اللغة الحالية من نفس النظام اللي بيستخدمه زرار الترجمة
+    function getLang() {
+        return document.documentElement.getAttribute("lang") === "ar" ? "ar" : "en";
+    }
+
+    btn.onclick = () => {
+        menu.classList.toggle("show");
+        btn.classList.toggle("active");
+    };
+
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".achievement-dropdown")) {
+            menu.classList.remove("show");
+            btn.classList.remove("active");
+        }
+    });
+
+    /* ======================
+       ضع الصور هنا
+       (كل description بقت en / ar)
+    ======================= */
+
+    const galleries = {
+
+        Ramadan: [
+            { img: "../MrAbdoAchive/Ramadan1.png", description: { en: "Ramadan celebration with students", ar: "احتفال المدرسة بشهر رمضان مع الطلاب" } },
+            { img: "../MrAbdoAchive/Ramadan2.jpg", description: { en: "Ramadan celebration with students", ar: "احتفال المدرسة بشهر رمضان مع الطلاب" } },
+            { img: "../MrAbdoAchive/Ramadan3.jpg", description: { en: "Ramadan celebration with students", ar: "احتفال المدرسة بشهر رمضان مع الطلاب" } },
+            { img: "../MrAbdoAchive/Ramadan4.jpg", description: { en: "Ramadan celebration with students", ar: "احتفال المدرسة بشهر رمضان مع الطلاب" } }
+        ],
+
+        MothersDay: [
+            { img: "../MrAbdoAchive/MothersDay1.jpg", description: { en: "KG celebration of Mother's Day in 2022", ar: "احتفال مرحلة رياض الأطفال بعيد الأم عام 2022" } },
+            { img: "../MrAbdoAchive/MothersDay2.jpg", description: { en: "KG celebration of Mother's Day in 2022", ar: "احتفال مرحلة رياض الأطفال بعيد الأم عام 2022" } },
+            { img: "../MrAbdoAchive/MothersDay3.jpg", description: { en: "KG celebration of Mother's Day in 2022", ar: "احتفال مرحلة رياض الأطفال بعيد الأم عام 2022" } }
+        ],
+
+        Masjid: [
+            { img: "../MrAbdoAchive/Masjid1.jpg", description: { en: "Building a mosque inside the school", ar: "بناء مسجد داخل المدرسة" } },
+            { img: "../MrAbdoAchive/Masjid2.jpg", description: { en: "Building a mosque inside the school", ar: "بناء مسجد داخل المدرسة" } },
+            { img: "../MrAbdoAchive/Masjid3.jpg", description: { en: "Building a mosque inside the school", ar: "بناء مسجد داخل المدرسة" } }
+        ],
+
+        Thelittlecreator: [
+            { img: "../MrAbdoAchive/Creative child1.jpg", description: { en: "Creative Child competition", ar: "مسابقة الطفل المبدع" } },
+            { img: "../MrAbdoAchive/Creative child2.jpg", description: { en: "Creative Child competition", ar: "مسابقة الطفل المبدع" } },
+            { img: "../MrAbdoAchive/Creative child3.jpg", description: { en: "Creative Child competition", ar: "مسابقة الطفل المبدع" } }
+        ],
+
+
+        
+
+        karate: [
+            { img: "../MrAbdoAchive/football1.jpg", description: { en: "2023 football championship", ar: "بطولة كرة القدم 2023" } },
+            { img: "../MrAbdoAchive/football2.jpg", description: { en: "2023 football championship", ar: "بطولة كرة القدم 2023" } },
+            { img: "../MrAbdoAchive/football3.jpg", description: { en: "2023 football championship", ar: "بطولة كرة القدم 2023" } }
+        ],
+
+        boxing: [
+            { img: "../MrAbdoAchive/boxing1.jpg", description: { en: "Kick boxing competition", ar: "مسابقة الكيك بوكسينج" } }
+        ],
+
+        Kgvisits: [
+            { img: "../MrAbdoAchive/kg1.jpg", description: { en: "KG visits", ar: "زيارات رياض الأطفال" } },
+            { img: "../MrAbdoAchive/kg2.jpg", description: { en: "KG visits", ar: "زيارات رياض الأطفال" } },
+            { img: "../MrAbdoAchive/kg3.jpg", description: { en: "KG visits", ar: "زيارات رياض الأطفال" } }
+        ],
+
+        camera: [
+            { img: "../MrAbdoAchive/camera1.jpg", description: { en: "School insurance / surveillance", ar: "تأمين المدرسة" } },
+            { img: "../MrAbdoAchive/camera2.jpg", description: { en: "School insurance / surveillance", ar: "تأمين المدرسة" } }
+        ],
+
+        Latestbuildings: [
+            { img: "../MrAbdoAchive/build1.jpg", description: { en: "Latest school buildings", ar: "أحدث مباني المدرسة" } },
+            { img: "../MrAbdoAchive/build2.jpg", description: { en: "Latest school buildings", ar: "أحدث مباني المدرسة" } }
+        ],
+
+        Schooldecoration: [
+            { img: "../MrAbdoAchive/Decoration1.jpg", description: { en: "School decoration", ar: "تزيين المدرسة" } }
+        ],
+
+        Schoolagriculture: [
+            { img: "../MrAbdoAchive/Tree1.jpg", description: { en: "School agriculture", ar: "الزراعة المدرسية" } },
+            { img: "../MrAbdoAchive/Tree2.jpg", description: { en: "School agriculture", ar: "الزراعة المدرسية" } }
+        ],
+
+        Honoring: [
+            { img: "../MrAbdoAchive/Honoring1.jpg", description: { en: "Honoring ceremony", ar: "حفل تكريم" } }
+        ],
+
+        HonoringMrAbdelRahman: [
+            { img: "../MrAbdoAchive/mr1.jpg", description: { en: "Honoring Mr. Abdelrahman", ar: "تكريم الأستاذ عبدالرحمن" } },
+            { img: "../MrAbdoAchive/mr2.jpg", description: { en: "Honoring Mr. Abdelrahman", ar: "تكريم الأستاذ عبدالرحمن" } },
+            { img: "../MrAbdoAchive/mr3.jpg", description: { en: "Honoring Mr. Abdelrahman", ar: "تكريم الأستاذ عبدالرحمن" } }
+        ],
+
+        party: [
+            { img: "../MrAbdoAchive/party1.jpg", description: { en: "School party", ar: "الحفل المدرسي" } },
+            { img: "../MrAbdoAchive/party2.jpg", description: { en: "School party", ar: "الحفل المدرسي" } },
+            { img: "../MrAbdoAchive/party3.jpg", description: { en: "School party", ar: "الحفل المدرسي" } }
+        ],
+
+        dp: [
+            { img: "../MrAbdoAchive/dp1.jpg", description: { en: "Dream Park trip", ar: "رحلة دريم بارك" } },
+            { img: "../MrAbdoAchive/dp2.jpg", description: { en: "Dream Park trip", ar: "رحلة دريم بارك" } },
+            { img: "../MrAbdoAchive/dp3.jpg", description: { en: "Dream Park trip", ar: "رحلة دريم بارك" } }
+        ],
+
+        Hospital: [
+            { img: "../MrAbdoAchive/Hospital1.jpg", description: { en: "57357 Hospital visit", ar: "زيارة مستشفى 57357" } },
+            { img: "../MrAbdoAchive/Hospital2.jpg", description: { en: "57357 Hospital visit", ar: "زيارة مستشفى 57357" } },
+            { img: "../MrAbdoAchive/Hospital3.jpg", description: { en: "57357 Hospital visit", ar: "زيارة مستشفى 57357" } },
+            { type: "video", src: "../MrAbdoAchive/HospitalVideo1.mp4", description: { en: "Hospital tour video", ar: "فيديو جولة داخل المستشفى" } }
+        ],
+
+        Aml: [
+            { img: "../MrAbdoAchive/aml1.jpg", description: { en: "Amal Mubarak's visit", ar: "زيارة أمل مبارك" } },
+            { img: "../MrAbdoAchive/aml2.jpg", description: { en: "Amal Mubarak's visit", ar: "زيارة أمل مبارك" } },
+            { img: "../MrAbdoAchive/aml3.jpg", description: { en: "Amal Mubarak's visit", ar: "زيارة أمل مبارك" } }
+        ],
+
+        Corridor: [
+            { img: "../MrAbdoAchive/Corridor1.jpg", description: { en: "School corridor", ar: "ممر المدرسة" } },
+            { img: "../MrAbdoAchive/Corridor2.jpg", description: { en: "School corridor", ar: "ممر المدرسة" } }
+        ],
+
+        PurpleComet: [
+            { img: "../MrAbdoAchive/pc1.jpg", description: { en: "Purple Comet competition", ar: "مسابقة Purple Comet" } },
+            { img: "../MrAbdoAchive/pc2.jpg", description: { en: "Purple Comet competition", ar: "مسابقة Purple Comet" } },
+            { img: "../MrAbdoAchive/pc3.jpg", description: { en: "Purple Comet competition", ar: "مسابقة Purple Comet" } }
+        ],
+
+        deutsch: [
+            {
+                img: "../MrAbdoAchive/deutsch1.jpg",
+                description: {
+                    en: `Ahmed Orabi Official Language School successfully passed the first and second qualification rounds of the International German Language Olympiad at the national level.
+
+Student Sara Abdelrahman Rashed, a Grade 8 student, achieved outstanding results in the first stage of the competition, held from March 13 to March 16, 2022. Out of 63 participants, only 30 students qualified for the second round.
+
+She then completed the Listening and Writing examination at the Goethe-Institut on Saturday, March 19, 2022. The exam lasted for two hours and marked another important achievement in her journey toward the International German Language Olympiad.`,
+                    ar: `اجتازت مدرسة أحمد عرابي الرسمية لغات بنجاح الدورين التأهيليين الأول والثاني لأولمبياد اللغة الألمانية الدولي على المستوى القومي.
+
+حققت الطالبة سارة عبدالرحمن راشد، طالبة الصف الثامن، نتائج متميزة في المرحلة الأولى من المسابقة، التي أُقيمت من 13 إلى 16 مارس 2022. من إجمالي 63 مشاركًا، تأهل 30 طالبًا فقط للدور الثاني.
+
+بعدها أدّت الطالبة اختبار الاستماع والكتابة في معهد جوته يوم السبت 19 مارس 2022، واستمر الاختبار لمدة ساعتين، ليكون إنجازًا مهمًا آخر في رحلتها نحو أولمبياد اللغة الألمانية الدولي.`
+                }
+            },
+            {
+                img: "../MrAbdoAchive/deutsch2.jpg",
+                description: {
+                    en: `Ahmed Orabi Official Language School successfully passed the first and second qualification rounds of the International German Language Olympiad at the national level.
+
+Student Sara Abdelrahman Mohamed, a Grade 8 student, achieved outstanding results in the first stage of the competition, held from March 13 to March 16, 2022. Out of 63 participants, only 30 students qualified for the second round.
+
+She then completed the Listening and Writing examination at the Goethe-Institut on Saturday, March 19, 2022. The exam lasted for two hours and marked another important achievement in her journey toward the International German Language Olympiad.`,
+                    ar: `اجتازت مدرسة أحمد عرابي الرسمية لغات بنجاح الدورين التأهيليين الأول والثاني لأولمبياد اللغة الألمانية الدولي على المستوى القومي.
+
+حققت الطالبة سارة عبدالرحمن محمد، طالبة الصف الثامن، نتائج متميزة في المرحلة الأولى من المسابقة، التي أُقيمت من 13 إلى 16 مارس 2022. من إجمالي 63 مشاركًا، تأهل 30 طالبًا فقط للدور الثاني.
+
+بعدها أدّت الطالبة اختبار الاستماع والكتابة في معهد جوته يوم السبت 19 مارس 2022، واستمر الاختبار لمدة ساعتين، ليكون إنجازًا مهمًا آخر في رحلتها نحو أولمبياد اللغة الألمانية الدولي.`
+                }
+            }
+        ],
+
+        Theatercompetition: [
+            { img: "../MrAbdoAchive/tc1.jpg", description: { en: "Goethe-Institut theater competition", ar: "المسابقة المسرحية بمعهد جوته" } },
+            { img: "../MrAbdoAchive/tc2.jpg", description: { en: "Goethe-Institut theater competition", ar: "المسابقة المسرحية بمعهد جوته" } }
+        ],
+
+        Math: [
+            { img: "../MrAbdoAchive/mc1.jpg", description: { en: "Mathematics competition", ar: "مسابقة الرياضيات" } },
+            { img: "../MrAbdoAchive/mc2.jpg", description: { en: "Mathematics competition", ar: "مسابقة الرياضيات" } }
+        ],
+
+        ChildhoodDay: [
+            { img: "../MrAbdoAchive/cd1.jpg", description: { en: "Childhood Day celebration", ar: "احتفال يوم الطفولة" } },
+            { img: "../MrAbdoAchive/cd2.jpg", description: { en: "Childhood Day celebration", ar: "احتفال يوم الطفولة" } },
+            { img: "../MrAbdoAchive/cd3.jpg", description: { en: "Childhood Day celebration", ar: "احتفال يوم الطفولة" } }
+        ],
+
+        camp: [
+            { img: "../MrAbdoAchive/camp1.jpg", description: { en: "School camp", ar: "المعسكر المدرسي" } },
+            { img: "../MrAbdoAchive/camp2.jpg", description: { en: "School camp", ar: "المعسكر المدرسي" } },
+            { img: "../MrAbdoAchive/camp3.jpg", description: { en: "School camp", ar: "المعسكر المدرسي" } },
+            { img: "../MrAbdoAchive/camp4.jpg", description: { en: "School camp", ar: "المعسكر المدرسي" } }
+        ],
+                    Math: [
+            { img: "../MrAbdoAchive/mc1.jpg", title: "Click To View", description: "Goethe Institut" },
+            { img: "../MrAbdoAchive/mc2.jpg", title: "Click To View", description: "Goethe Institut" }
+        ],
+
+    };
+
+    let currentGalleryName = null;
+    let currentOpenIndex = null;
+
+    function loadGallery(name) {
+
+        currentGalleryName = name;
+        gallery.innerHTML = "";
+
+        if (!galleries[name]) return;
+
+        const lang = getLang();
+        const cardLabel = (translations[lang] && translations[lang]["click-view"]) || "Click To View";
+
+        galleries[name].forEach((item, index) => {
+
+            const path = item.img || item.src;
+            const isVideo = item.type === "video";
+
+            gallery.innerHTML += `
+
+            <div class="championship-card">
+
+                ${
+                    isVideo
+                    ?
+                    `<video
+                        src="${path}"
+                        data-index="${index}"
+                        controls>
+                    </video>`
+                    :
+                    `<img
+                        src="${path}"
+                        alt="${cardLabel}"
+                        data-index="${index}">`
+                }
+
+                <h3>${cardLabel}</h3>
+
+            </div>
+
+            `;
+
+        });
+
+    }
+
+    document.querySelectorAll("#achievementMenu button").forEach(button => {
+
+        button.onclick = () => {
+
+            title.innerHTML =
+                `<i class="fa-solid fa-images"></i> ${button.textContent}`;
+
+            loadGallery(button.dataset.gallery);
+
+            menu.classList.remove("show");
+            btn.classList.remove("active");
+
+        };
+
+    });
+
+    const modal = document.getElementById("imageModal");
+    const popupImage = document.getElementById("popupImage");
+    const popupVideo = document.getElementById("popupVideo");
+    const popupText = document.getElementById("popupText");
+
+    function getDescriptionByIndex(index) {
+        const item = galleries[currentGalleryName] && galleries[currentGalleryName][index];
+        if (!item || !item.description) return "";
+        const lang = getLang();
+        return item.description[lang] || item.description.en || "";
+    }
+
+    gallery.addEventListener("click", (e) => {
+
+        const img = e.target.closest(".championship-card img");
+        const video = e.target.closest(".championship-card video");
+
+        if (img) {
+
+            const index = Number(img.dataset.index);
+            currentOpenIndex = index;
+
+            popupVideo.pause();
+            popupVideo.style.display = "none";
+            popupVideo.src = "";
+
+            popupImage.style.display = "block";
+            popupImage.src = img.src;
+
+            popupText.textContent = getDescriptionByIndex(index);
+
+            modal.classList.add("show");
+
+        }
+
+        if (video) {
+
+            const index = Number(video.dataset.index);
+            currentOpenIndex = index;
+
+            popupImage.style.display = "none";
+            popupImage.src = "";
+
+            popupVideo.style.display = "block";
+            popupVideo.src = video.currentSrc || video.src;
+            popupVideo.load();
+
+            popupText.textContent = getDescriptionByIndex(index);
+
+            modal.classList.add("show");
+
+        }
+
+    });
+
+    document.querySelector(".close").onclick = () => {
+        modal.classList.remove("show");
+        popupVideo.pause();
+        popupVideo.currentTime = 0;
+        currentOpenIndex = null;
+    };
+
+    modal.onclick = (e) => {
+        if (e.target === modal) {
+            modal.classList.remove("show");
+            popupVideo.pause();
+            popupVideo.currentTime = 0;
+            currentOpenIndex = null;
+        }
+    };
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            modal.classList.remove("show");
+            popupVideo.pause();
+            popupVideo.currentTime = 0;
+            currentOpenIndex = null;
+        }
+    });
+
+    const langSwitchBtn = document.getElementById("langSwitch");
+    langSwitchBtn?.addEventListener("click", () => {
+        setTimeout(() => {
+            if (currentGalleryName) loadGallery(currentGalleryName);
+            if (modal.classList.contains("show") && currentOpenIndex !== null) {
+                popupText.textContent = getDescriptionByIndex(currentOpenIndex);
+            }
+        }, 0);
+    });
+
+});
+</script>
+
+</body>
+
+</html>

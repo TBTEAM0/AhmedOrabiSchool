@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Classes | A.O.L.S</title>
+        <link rel="stylesheet" href="classroom.css">
+        <link rel="stylesheet" href="/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="icon" type="image/png" href="../images/Orabi.png">
+    </head>
+    <body>
+        <div id="imageModal" class="image-modal">
+            <span class="close">&times;</span>
+            <div class="modal-content">
+                <img id="popupImage" src="" alt="">
+                <p id="popupText"></p>
+            </div>
+        </div>
+        <!-- ============================================================ -->
+        <!--  HEADER  -->
+        <!-- ============================================================ -->
+        <header>
+            <a href="/index.html" class="logo">A.O.L.S</a>
+            <!-- ============================================================ -->
+            <!--  NAV  #navbar  -->
+            <!-- ============================================================ -->
+            <nav id="navbar">
+                <ul>
+                    <li>
+                        <a href="/index.html" data-i18n="nav-home">HOME</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#members" data-i18n="nav-principals">PRINCIPALS</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#stage" data-i18n="nav-class">CLASS</a>
+                    </li>
+                    <li>
+                        <a href="about.html" data-i18n="nav-about">ABOUT</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" data-i18n="nav-contact">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <button class="lang-switch" id="langSwitch" type="button">
+                    <span class="ls-en">EN</span>
+                    <span class="ls-ar">AR</span>
+                </button>
+                <div class="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </header>
+        <!-- ================= Section (التابز والصور) ================= -->
+        <section class="students">
+            <div class="students-title">
+                <h2>Classes Gallery</h2>
+                <p>Choose a category to view its gallery.</p>
+            </div>
+            <div class="classes-tabs">
+                <button class="classes-tab-btn active" data-tab="kg-imgs">KG Gallery</button>
+                <button class="classes-tab-btn" data-tab="primary-imgs">Primary Gallery</button>
+                <button class="classes-tab-btn" data-tab="preparatory-imgs">Preparatory Gallery</button>
+                <button class="classes-tab-btn" data-tab="secondary-imgs">Secondary Gallery</button>
+            </div>
+            <!-- KG -->
+            <div class="classes-tab-content active" id="kg-imgs">
+                <div class="classes-gallery">
+                    <div class="classes-card">
+                        <img src="../images/Football1.png" alt="Football" data-text="Football Championship.">
+                        <h3>Football</h3>
+                        <p>Football Championship</p>
+                    </div>
+                    <div class="classes-card">
+                        <img src="../images/basket1.jpg" alt="Basketball" data-text="Basketball Championship.">
+                        <h3>Basketball</h3>
+                        <p>Basketball Championship</p>
+                    </div>
+                    <div class="classes-card">
+                        <img src="../images/chess1.jpg" alt="Chess" data-text="Chess Championship.">
+                        <h3>Chess</h3>
+                        <p>Chess Championship</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Primary -->
+            <div class="classes-tab-content" id="primary-imgs">
+                <div class="classes-gallery">
+                    <div class="classes-card">
+                        <img src="../images/Orabis1d16.png" alt="El Abakera" data-text="The first season of Al-Abqara was our team's first participation.">
+                        <h3>El Abakera</h3>
+                        <p>Season 1</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Preparatory -->
+            <div class="classes-tab-content" id="preparatory-imgs">
+                <div class="classes-gallery">
+                    <div class="classes-card">
+                        <img src="../images/Orabis1d16.png" alt="El Abakera" data-text="The first season of Al-Abqara was our team's first participation.">
+                        <h3>El Abakera</h3>
+                        <p>Season 1</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Secondary -->
+            <div class="classes-tab-content" id="secondary-imgs">
+                <div class="classes-gallery">
+                    <div class="classes-card">
+                        <img src="../images/Orabis1d16.png" alt="El Abakera" data-text="The first season of Al-Abqara was our team's first participation.">
+                        <h3>El Abakera</h3>
+                        <p>Season 1</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="../script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Accordion
+        const buttons = document.querySelectorAll(".accordion-btn");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const content = btn.nextElementSibling;
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+
+        // Tabs
+        const tabs = document.querySelectorAll(".classes-tab-btn");
+        const contents = document.querySelectorAll(".classes-tab-content");
+
+        tabs.forEach(tab => {
+
+            tab.addEventListener("click", () => {
+
+                tabs.forEach(btn => btn.classList.remove("active"));
+                contents.forEach(content => content.classList.remove("active"));
+
+                tab.classList.add("active");
+
+                const target = document.getElementById(tab.dataset.tab);
+
+                if (target) {
+                    target.classList.add("active");
+                }
+
+            });
+
+        });
+
+    });
+</script>    
+</body>
+</html>

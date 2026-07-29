@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Mrs. Eman Abdelhamed
+    </title>
+    <link href="../images/Orabi.png" rel="icon" type="image/png" />
+    <link href="../style.css" rel="stylesheet" />
+    <link href="mrseman.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <!-- ================= IMAGE POPUP ================= -->
+    <div class="image-modal" id="imageModal">
+        <span class="close">
+            ×
+        </span>
+        <div class="modal-content">
+            <img alt="" id="popupImage" src="" />
+            <p id="popupText">
+            </p>
+        </div>
+    </div>
+    <!-- ================= HEADER ================= -->
+    <header>
+        <a class="logo" href="../index.html">
+            A.O.L.S
+        </a>
+        <!-- ============================================================ -->
+        <!--  NAV  #navbar  -->
+        <!-- ============================================================ -->
+        <nav id="navbar">
+            <ul>
+                <li>
+                    <a data-i18n="nav-home" href="../index.html">
+                        HOME
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-principals" href="../index.html#members">
+                        PRINCIPALS
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-class" href="../index.html#stage">
+                        CLASS
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-about" href="../pages/about.html">
+                        ABOUT
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-contact" href="../pages/contact.html">
+                        CONTACT
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <button class="lang-switch" id="langSwitch" type="button">
+                <span class="ls-en">
+                    EN
+                </span>
+                <span class="ls-ar">
+                    AR
+                </span>
+            </button>
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars">
+                </i>
+            </div>
+        </div>
+    </header>
+    <!-- ================= mrseman.css ================= -->
+    <section class="mrseman-activities">
+        <div class="classes-title">
+            <img alt="Mrs. Eman" class="teacher-photo" src="../images/mrseman2.png" />
+<h2 data-i18n="mrseman-title">
+    Mrs. Eman Abdelhamed Achievements
+</h2>
+<p data-i18n="mrseman-desc">
+    Select an achievement to view its gallery.
+</p>
+        </div>
+        <!-- ================= DROPDOWN ================= -->
+        <div class="achievement-dropdown">
+            <button class="achievement-btn" id="achievementBtn">
+<span data-i18n-html="mrseman-dropdown-title" id="achievementTitle">
+    <i class="fa-solid fa-images">
+    </i>
+    Mrs. Eman Abdelhamed Achievements
+</span>
+                <i class="fa-solid fa-chevron-down arrow">
+                </i>
+            </button>
+            <div class="achievement-menu" id="achievementMenu">
+<button data-gallery="chess" data-i18n="achievement-chess">
+    Chess
+</button>
+<button data-gallery="abakera" data-i18n="achievement-abakera">
+    Al-Abakera
+</button>
+<button data-gallery="windows" data-i18n="achievement-windows">
+    New Windows
+</button>
+<button data-gallery="quran" data-i18n="achievement-quran">
+    Quran
+</button>
+<button data-gallery="ml" data-i18n="achievement-ml">
+    Renovation of the school courtyard
+</button>
+
+                <!-- <button data-gallery="football">
+                    Football Competition 2023
+                </button>
+                <button data-gallery="karate">
+                    Karate
+                </button>
+                <button data-gallery="boxing">
+                    Kick Boxing
+                </button>
+                <button data-gallery="Kgvisits">
+                    Kg Visits
+                </button>
+                <button data-gallery="camera">
+                    School Insurance
+                </button>
+                <button data-gallery="Latestbuildings">
+                    Latest Buildings
+                </button>
+                <button data-gallery="Schooldecoration">
+                    School Decorationn
+                </button>
+                <button data-gallery="Schoolagriculture">
+                    School Agriculture
+                </button>
+                <button data-gallery="Honoring">
+                    Honoring
+                </button>
+                <button data-gallery="HonoringMrAbdelRahman">
+                    Honoring Mr. AbdelRahman
+                </button>
+                <button data-gallery="party">
+                    party
+                </button>
+                <button data-gallery="dp">
+                    Dream Park
+                </button>
+                <button data-gallery="Hospital">
+                    57357 Hospital
+                </button>
+                <button data-gallery="Aml">
+                    Amal Mubarak's visit
+                </button>
+                <button data-gallery="Corridor">
+                    Corridor
+                </button>
+                <button data-gallery="PurpleComet">
+                    Purple Comet
+                </button>
+                <button data-gallery="deutsch">
+                    Deutsch competition
+                </button>
+                <button data-gallery="Theatercompetition">
+                    Theater Competition
+                </button>
+                <button data-gallery="Math">
+                    Maths Competition
+                </button>
+                <button data-gallery="ChildhoodDay">
+                    Childhood Day
+                </button>
+                <button data-gallery="camp">
+                    School Camp
+                </button>
+                
+                        <button data-gallery="opening">School Opening</button>
+                        <button data-gallery="graduation">Graduation Day</button>
+                        <button data-gallery="teachers">Teachers Day</button>
+                        <button data-gallery="...">...</button>
+                        <button data-gallery="ramadan">Ramadan Celebration</button>
+                        <button data-gallery="national">National Celebration</button>
+                        <button data-gallery="other">Other Achievements</button>
+                    -->
+            </div>
+               
+        </div>
+        <!-- ================= GALLERY ================= -->
+        <div class="championship-gallery" id="galleryContainer">
+            <!-- سيتم إنشاء الكروت تلقائياً بالجافاسكربت -->
+        </div>
+    </section>
+
+<script src="../script.js"></script>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const btn = document.getElementById("achievementBtn");
+        const menu = document.getElementById("achievementMenu");
+        const title = document.getElementById("achievementTitle");
+        const gallery = document.getElementById("galleryContainer");
+
+        // يقرأ اللغة الحالية من نفس النظام اللي بيستخدمه زرار الترجمة
+        function getLang() {
+            return document.documentElement.getAttribute("lang") === "ar" ? "ar" : "en";
+        }
+
+        btn.onclick = () => {
+            menu.classList.toggle("show");
+            btn.classList.toggle("active");
+        };
+
+        document.addEventListener("click", (e) => {
+            if (!e.target.closest(".achievement-dropdown")) {
+                menu.classList.remove("show");
+                btn.classList.remove("active");
+            }
+        });
+
+        /* ======================
+           ضع الصور هنا
+           (كل description بقت en / ar)
+        ======================= */
+
+        const galleries = {
+
+            chess: [
+                { img: "../MrsEmanAchive/chess.jpg", description: { en: "Chess Championship", ar: "بطولة الشطرنج" } },
+                { img: "../MrsEmanAchive/chess2.jpg", description: { en: "Chess Championship", ar: "بطولة الشطرنج" } },
+                { img: "../MrsEmanAchive/chess3.jpg", description: { en: "Chess Championship", ar: "بطولة الشطرنج" } },
+                { img: "../MrsEmanAchive/chess4.png", description: { en: "Chess Championship", ar: "بطولة الشطرنج" } }
+            ],
+
+            abakera: [
+                {
+                    img: "../MrsEmanAchive/team2.jpeg",
+                    description: {
+                        en: "Team A.o.l.s Season 2\n\nThe Players Are:\n1. Bassant Atef\n2. Ziad Ahmed\n3. Nada Abdallah\n4. Yaseen Ahmed\n5. Rouqia Khaled\n6. Abdallah Ahmed",
+                        ar: "فريق A.o.l.s الموسم الثاني\n\nاللاعبون هم:\n1. بسنت عاطف\n2. زياد أحمد\n3. ندى عبدالله\n4. ياسين أحمد\n5. رقية خالد\n6. عبدالله أحمد"
+                    }
+                },
+                { img: "../MrsEmanAchive/abdallah.jpeg", description: { en: "Abdallah Ahmed", ar: "عبدالله أحمد" } },
+                { img: "../MrsEmanAchive/basant.jpeg", description: { en: "Bassant Atef", ar: "بسنت عاطف" } },
+                { img: "../MrsEmanAchive/rahmamo7sen.jpeg", description: { en: "Yaseen Ahmed", ar: "ياسين أحمد" } },
+                { img: "../MrsEmanAchive/rouqia.jpeg", description: { en: "Rouqia Khaled", ar: "رقية خالد" } },
+                { img: "../MrsEmanAchive/zeyad.jpeg", description: { en: "Ziad Ahmed", ar: "زياد أحمد" } },
+                { img: "../MrsEmanAchive/nada.jpeg", description: { en: "Nada Abdallah", ar: "ندى عبدالله" } }
+            ],
+
+            windows: [
+                { img: "../MrsEmanAchive/windows.jpeg", description: { en: "Buy new windows", ar: "شراء نوافذ جديدة" } },
+                { img: "../MrsEmanAchive/windows.jpeg", description: { en: "Buy new windows", ar: "شراء نوافذ جديدة" } }
+            ],
+
+            quran: [
+                { img: "../MrsEmanAchive/quran.jpeg", description: { en: "Quran Championship", ar: "بطولة القرآن الكريم" } },
+                { img: "../MrsEmanAchive/quran3.jpeg", description: { en: "Quran Championship", ar: "بطولة القرآن الكريم" } },
+                { img: "../MrsEmanAchive/quran7.jpeg", description: { en: "Quran Championship", ar: "بطولة القرآن الكريم" } }
+            ],
+
+            ml: [
+                { img: "../MrsEmanAchive/ml.jpeg", description: { en: "Renovation of the school courtyard", ar: "تجديد فناء المدرسة" } },
+                { img: "../MrsEmanAchive/ml2.jpeg", description: { en: "Renovation of the school courtyard", ar: "تجديد فناء المدرسة" } },
+                { img: "../MrsEmanAchive/ml3.jpeg", description: { en: "Renovation of the school courtyard", ar: "تجديد فناء المدرسة" } },
+                { img: "../MrsEmanAchive/ml4.jpeg", description: { en: "Renovation of the school courtyard", ar: "تجديد فناء المدرسة" } },
+                { img: "../MrsEmanAchive/ml5.jpeg", description: { en: "Renovation of the school courtyard", ar: "تجديد فناء المدرسة" } },
+                { img: "../MrsEmanAchive/ml6.jpeg", description: { en: "Renovation of the school courtyard", ar: "تجديد فناء المدرسة" } }
+            ]
+
+         
+
+        };
+
+        let currentGalleryName = null;
+        let currentOpenIndex = null;
+
+        function loadGallery(name) {
+
+            currentGalleryName = name;
+            gallery.innerHTML = "";
+
+            if (!galleries[name]) return;
+
+            const lang = getLang();
+            const cardLabel = (typeof translations !== "undefined" && translations[lang] && translations[lang]["click-view"]) || "Click To View";
+
+            galleries[name].forEach((item, index) => {
+
+                gallery.innerHTML += `
+
+            <div class="championship-card">
+
+                <img
+                    src="${item.img}"
+                    alt="${cardLabel}"
+                    data-index="${index}">
+
+                <h3>${cardLabel}</h3>
+
+            </div>
+
+            `;
+
+            });
+
+        }
+
+        document.querySelectorAll("#achievementMenu button").forEach(button => {
+
+            button.onclick = () => {
+
+                title.innerHTML =
+                    `<i class="fa-solid fa-images"></i> ${button.textContent}`;
+
+                loadGallery(button.dataset.gallery);
+
+                menu.classList.remove("show");
+                btn.classList.remove("active");
+
+            };
+
+        });
+
+        const modal = document.getElementById("imageModal");
+        const popupImage = document.getElementById("popupImage");
+        const popupText = document.getElementById("popupText");
+
+        function getDescriptionByIndex(index) {
+            const item = galleries[currentGalleryName] && galleries[currentGalleryName][index];
+            if (!item || !item.description) return "";
+            const lang = getLang();
+            return item.description[lang] || item.description.en || "";
+        }
+
+        gallery.addEventListener("click", (e) => {
+
+            const img = e.target.closest(".championship-card img");
+            if (!img) return;
+
+            const index = Number(img.dataset.index);
+            currentOpenIndex = index;
+
+            popupImage.src = img.src;
+            popupImage.alt = img.alt;
+
+            popupText.textContent = getDescriptionByIndex(index);
+
+            modal.classList.add("show");
+
+        });
+
+        document.querySelector(".close").onclick = () => {
+            modal.classList.remove("show");
+            currentOpenIndex = null;
+        };
+
+        modal.onclick = (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("show");
+                currentOpenIndex = null;
+            }
+        };
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                modal.classList.remove("show");
+                currentOpenIndex = null;
+            }
+        });
+
+        const langSwitchBtn = document.getElementById("langSwitch");
+        langSwitchBtn?.addEventListener("click", () => {
+            setTimeout(() => {
+                if (currentGalleryName) loadGallery(currentGalleryName);
+                if (modal.classList.contains("show") && currentOpenIndex !== null) {
+                    popupText.textContent = getDescriptionByIndex(currentOpenIndex);
+                }
+            }, 0);
+        });
+
+    });
+
+</script>
+
+</body>
+
+</html>

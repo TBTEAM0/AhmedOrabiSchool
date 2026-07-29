@@ -1,0 +1,803 @@
+/* ==========================================================================
+   A.O.L.S — About Page
+   ========================================================================== */
+
+
+/* ==========================================================================
+   PAGE BACKGROUND  —  navy overlay now covers the WHOLE page
+   The body background is fixed, so the same dark navy canvas stays in the
+   viewport as the user scrolls. Top and bottom are slightly darker than the
+   middle, creating a soft vignette that frames the content.
+   ========================================================================== */
+
+body {
+    font-family: "Cairo", sans-serif;
+    background: linear-gradient(
+        180deg,
+        rgba(10, 23, 48, 0.85) 0%,
+        rgba(10, 23, 48, 0.78) 45%,
+        rgba(10, 23, 48, 0.88) 100%
+    ),
+        url("/images/aols.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+
+/* ==========================================================================
+   DESIGN TOKENS
+   ========================================================================== */
+
+:root {
+    --main_color: #2563eb;
+
+    /* extended palette, scoped to the About page */
+    --aols-blue-700:  #1d4ed8;
+    --aols-blue-100:  #dbeafe;
+    --aols-blue-50:   #eff6ff;
+    --aols-navy:      #0a1730;
+    --aols-navy-2:    #132a5e;
+    --aols-gold:      #d4a72c;
+    --aols-gold-soft: #f2e2b8;
+    --aols-gold-deep: #b8861e;
+    --aols-ink:       #0f172a;
+    --aols-slate:     #475569;
+    --aols-paper:     #f8fafc;
+    --aols-line:      rgba(37, 99, 235, .16);
+
+    --aols-radius-lg: 28px;
+    --aols-radius-md: 18px;
+    --aols-ease:      cubic-bezier(.22, .61, .36, 1);
+}
+
+
+/* ==========================================================================
+   PAGE WRAPPER & SHARED BITS
+   ========================================================================== */
+
+.about {
+    background: transparent;
+    color: var(--aols-ink);
+    overflow: clip;
+}
+
+.about section {
+    position: relative;
+}
+
+
+/* ----- Scroll-reveal animation ----- */
+
+.about [data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .8s var(--aols-ease), transform .8s var(--aols-ease);
+}
+
+.about [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+
+/* ----- Eyebrow label (small uppercase tag with leading rule) ----- */
+
+.about .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: gold;
+}
+
+.about .eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 2px;
+    background: var(--main_color);
+    display: inline-block;
+}
+
+
+/* ==========================================================================
+   1. HERO
+   ========================================================================== */
+
+.about-hero {
+    min-height: 92vh;
+    padding: 160px 24px 90px;
+    display: flex;
+    align-items: flex-end;
+    color: #fff;
+}
+
+/* Subtle blue grid texture, masked into a soft radial area.
+   (Previously this declaration was broken by a trailing comma — the whole
+   background-image was being dropped. Fixed.) */
+.about-hero__field {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(37, 99, 235, .12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 99, 235, .12) 1px, transparent 1px);
+    background-size: 26px 26px, 26px 26px;
+    -webkit-mask-image: radial-gradient(70% 70% at 70% 30%, #000 0%, transparent 75%);
+            mask-image: radial-gradient(70% 70% at 70% 30%, #000 0%, transparent 75%);
+}
+
+/* Floating blurred orbs */
+.about-hero__orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: 0;
+    animation: about-drift 16s ease-in-out infinite;
+}
+
+.about-hero__orb--a {
+    width: 340px;
+    height: 340px;
+    top: 8%;
+    right: 10%;
+    background: rgba(37, 99, 235, .45);
+}
+
+.about-hero__orb--b {
+    width: 220px;
+    height: 220px;
+    bottom: 12%;
+    left: 6%;
+    background: rgba(212, 167, 44, .35);
+    animation-delay: -6s;
+}
+
+.about-hero__orb--c {
+    width: 140px;
+    height: 140px;
+    top: 42%;
+    left: 40%;
+    background: rgba(255, 255, 255, .12);
+    animation-delay: -11s;
+}
+
+@keyframes about-drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%      { transform: translate(-24px, 26px) scale(1.08); }
+}
+
+
+/* ----- Hero content ----- */
+
+.about-hero__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1180px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.about-hero__lang {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 14px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--aols-gold-soft);
+    margin-bottom: 22px;
+}
+
+.about-hero__lang-word {
+    font-weight: 700;
+    color: #fff;
+    min-width: 8ch;
+    display: inline-block;
+    transition: opacity .5s ease;
+}
+
+.about-hero__title {
+    font-size: clamp(2.6rem, 3.4vw + 1.4rem, 4.6rem);
+    line-height: 1.06;
+    font-weight: 800;
+    letter-spacing: -.01em;
+    max-width: 14ch;
+    margin: 0 0 24px;
+}
+
+.about-hero__title em {
+    font-style: normal;
+    background: linear-gradient(100deg, #dbeafe, #93c5fd 45%, var(--aols-gold-soft));
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+}
+
+.about-hero__subtitle {
+    font-size: clamp(1.05rem, .4vw + 1rem, 1.25rem);
+    line-height: 1.8;
+    color: rgba(255, 255, 255, .78);
+    max-width: 56ch;
+}
+
+
+/* ----- Scroll indicator (bottom-left of hero) ----- */
+
+.about-hero__scroll {
+    position: absolute;
+    left: 24px;
+    bottom: 34px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, .6);
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.about-hero__scroll-track {
+    width: 1px;
+    height: 46px;
+    background: rgba(255, 255, 255, .25);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-hero__scroll-track::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(var(--aols-gold), transparent);
+    animation: about-scroll-fall 2.2s ease-in-out infinite;
+}
+
+@keyframes about-scroll-fall {
+    0%   { top: -100%; }
+    60%  { top: 100%; }
+    100% { top: 100%; }
+}
+
+
+/* ==========================================================================
+   JOURNEY WRAPPER  —  the connecting spine behind Story / Principal / Path
+   ========================================================================== */
+
+.about-journey {
+    position: relative;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.about-journey__spine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--aols-line);
+    transform: translateX(-1px);
+}
+
+.about-journey__spine-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(var(--main_color), var(--aols-gold));
+    box-shadow: 0 0 14px rgba(37, 99, 235, .55);
+    transition: height .12s linear;
+}
+
+
+/* ==========================================================================
+   2. OUR STORY
+   ========================================================================== */
+
+.about-story {
+    padding: 130px 0 110px;
+}
+
+/* Dot markers on the spine (shared with Principal + Path) */
+.about-story__marker,
+.about-path__marker,
+.about-principal__marker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--aols-paper);
+    border: 2px solid var(--main_color);
+    z-index: 1;
+}
+
+.about-story__marker { top: 8px; }
+
+
+/* ----- Story grid: sticky label on the left, scrolling text on the right ----- */
+
+.about-story__grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.about-story__label {
+    position: sticky;
+    top: 120px;
+}
+
+.about-story__label h2 {
+    font-size: clamp(1.8rem, 1.4vw + 1.3rem, 2.6rem);
+    font-weight: 800;
+    color: white;
+    margin: 14px 0 10px;
+}
+
+.about-story__label  {
+    font-size: 14px;
+    color: var(--aols-slate);
+    font-weight: 600;
+}
+.about-story__since{
+
+   font-size: 14px;
+    color: gold;
+    font-weight: 600;
+
+}
+
+.about-story__text {
+    font-size: 1.08rem;
+    line-height: 2;
+    color: var(--aols-slate);
+}
+
+.about-story__text p {
+    margin: 0 0 26px;
+    color: white;
+}
+
+html[dir="rtl"] .about-story__text p:first-of-type::first-letter {
+    float: right;
+    padding: 6px 0 0 10px;
+}
+
+.about-story__text p:first-of-type::first-letter {
+    float: left;
+    font-family: inherit;
+    font-weight: 800;
+    font-size: 3.6rem;
+    line-height: .82;
+    color: var(--main_color);
+    padding: 6px 10px 0 0;
+}
+
+.about-story__text strong {
+    color: gold;
+    font-weight: 700;
+}
+
+
+/* ==========================================================================
+   3. PRINCIPAL MESSAGE
+   ========================================================================== */
+
+.about-principal {
+    padding: 40px 0 110px;
+}
+
+.about-principal__marker { top: 8px; }
+
+.about-principal__panel {
+    position: relative;
+    margin-left: 54%;
+    max-width: 620px;
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    transition: .35s ease;
+}
+
+.about-principal__mark {
+    position: absolute;
+    top: -6px;
+    left: 32px;
+    font-size: 130px;
+    line-height: 1;
+    font-weight: 800;
+    color: var(--aols-blue-100);
+    z-index: 0;
+    user-select: none;
+}
+
+.about-principal__icon {
+    color: var(--aols-gold);
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.about-principal__quote {
+    position: relative;
+    z-index: 1;
+    font-size: 1.28rem;
+    line-height: 1.75;
+    color: white;
+    font-weight: 600;
+    margin: 0 0 26px;
+}
+
+.about-principal__cite {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-style: normal;
+    font-size: 14px;
+}
+
+.about-principal__cite b {
+    color: var(--main_color);
+    font-size: 15px;
+}
+
+.about-principal__cite span {
+    color: #09aef0;
+    font-weight: bold;
+}
+
+
+/* ==========================================================================
+   4. VISION / MISSION / VALUES  —  stations along the spine
+   ========================================================================== */
+
+.about-path {
+    padding: 20px 0 120px;
+}
+
+.about-path__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding: 56px 0;
+}
+
+.about-path__item:nth-child(even) .about-path__content { grid-column: 1; grid-row: 1; }
+.about-path__item:nth-child(even) .about-path__spacer  { grid-column: 2; grid-row: 1; }
+.about-path__item:nth-child(odd)  .about-path__content { grid-column: 2; grid-row: 1; }
+.about-path__item:nth-child(odd)  .about-path__spacer  { grid-column: 1; grid-row: 1; }
+
+.about-path__marker {
+    top: 56px;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-width: 1px;
+    border-color: var(--aols-line);
+    box-shadow: 0 10px 24px -8px rgba(37, 99, 235, .3);
+    color: var(--main_color);
+    font-size: 18px;
+}
+
+.about-path__content {
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    transition: .35s ease;
+}
+
+.about-path__content:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 44px -18px rgba(37, 99, 235, .28);
+    border-color: transparent;
+}
+
+.about-path__tag {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: cyan;
+}
+
+.about-path__content h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffe600;
+    margin: 10px 0 12px;
+}
+
+.about-path__content p {
+    color: white;
+    font-weight: bold;
+    line-height: 1.75;
+    margin: 0;
+}
+
+.about-path__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.about-path__chips span {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--aols-blue-50);
+    color: var(--aols-blue-700);
+}
+
+
+/* ==========================================================================
+   5. SCHOOL VALUES  —  staggered grid
+   ========================================================================== */
+
+.about-values {
+    padding: 40px 24px 130px;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.about-values__head {
+    max-width: 640px;
+    margin-bottom: 56px;
+}
+
+.about-values__head h2 {
+    font-size: clamp(1.8rem, 1.4vw + 1.3rem, 2.5rem);
+    font-weight: 800;
+    margin: 14px 0 12px;
+    color: white;
+}
+
+.about-values__head p {
+    color: #ffe600;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.about-values__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* NOTE: this block was duplicated three times in the original CSS, each time
+   overriding the previous transition. Merged into a single, final definition. */
+.about-values__item {
+    background: rgba(252, 252, 252, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.about-values__item:hover {
+    transform: translateY(10px); /* كلهم ينزلوا بنفس المقدار */
+    box-shadow:
+        0 0 20px rgba(118, 119, 119, 0.363),
+        0 0 40px rgba(12, 12, 12, 0.2);
+}
+
+.about-values__item:hover::before { opacity: 1; }
+
+.about-values__item i,
+.about-values__item h3,
+.about-values__item p {
+    position: relative;
+    z-index: 1;
+}
+
+.about-values__item i {
+    font-size: 26px;
+    color: var(--main_color);
+    margin-bottom: 16px;
+    display: inline-block;
+    transition: color .35s var(--aols-ease), transform .35s var(--aols-ease);
+}
+
+.about-values__item:hover i {
+    color: #fff;
+    transform: scale(1.1) rotate(6deg);
+}
+
+.about-values__item h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--aols-ink);
+    margin: 0 0 8px;
+    transition: color .35s var(--aols-ease);
+}
+
+.about-values__item:hover h3 { color: #09aef0; }
+
+/* NOTE: previously declared twice with conflicting colors. Final value: white. */
+.about-values__item p {
+    font-size: .95rem;
+    color: white;
+    line-height: 1.65;
+    margin: 0;
+    transition: color .35s var(--aols-ease);
+}
+
+
+/* ==========================================================================
+   6. CALL TO ACTION
+   --------------------------------------------------------------------------
+   The body is now a dark navy canvas, so the original dark-navy CTA panel
+   disappeared into the background. To make the finale actually pop, the
+   panel is now a bright gold gradient with dark navy text — the inverse of
+   the rest of the page. The button flips back to navy with gold text,
+   giving the panel a "treasure chest" feel.
+   ========================================================================== */
+
+.about-cta {
+    position: relative;
+    margin: 0 24px 100px;
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 90px 40px;
+    border-radius: 36px;
+    text-align: center;
+    overflow: hidden;
+
+    /* Bright gold gradient — the climax of the page */
+    background: rgba(252, 252, 252, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+/* Decorative orbs inside the CTA — adjusted to read against the gold panel */
+
+
+.about-cta h2 {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(1.9rem, 2vw + 1.3rem, 3rem);
+    font-weight: 800;
+    margin: 0 0 16px;
+    color: white;
+}
+
+.about-cta p {
+    position: relative;
+    z-index: 1;
+    color: #09aef0;
+    max-width: 46ch;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+    font-weight: bold;
+}
+
+/* Button: dark navy on bright gold — inverse of the panel for max contrast */
+.about-cta__btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, .2);
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.about-cta__btn i {
+    transition: transform .3s var(--aols-ease);
+}
+
+.about-cta__btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 46px -12px rgba(10, 23, 48, .8);
+}
+
+.about-cta__btn:hover i {
+    transform: translateX(4px);
+}
+
+
+/* ==========================================================================
+   RESPONSIVE  —  media queries ordered largest → smallest
+   ========================================================================== */
+
+/* ----- ≤ 980px : Values grid collapses to 2 columns ----- */
+@media (max-width: 980px) {
+    .about-values__grid { grid-template-columns: repeat(2, 1fr); }
+    .about-values__item:nth-child(2n) { transform: none; }
+    .about-values__item:nth-child(2n):hover,
+    .about-values__item:hover { transform: translateY(-6px); }
+}
+
+/* ----- ≤ 860px : Journey spine moves to the left edge, single-column layouts ----- */
+@media (max-width: 860px) {
+    .about-journey__spine { left: 20px; }
+
+    .about-story__marker,
+    .about-path__marker,
+    .about-principal__marker {
+        left: 20px;
+    }
+
+    .about-story__grid {
+        grid-template-columns: 1fr;
+        padding-left: 40px;
+        gap: 28px;
+    }
+    .about-story__label { position: static; }
+
+    .about-principal__panel {
+        margin-left: 40px;
+        padding: 40px 26px;
+    }
+
+    .about-path__item,
+    .about-path__item:nth-child(even),
+    .about-path__item:nth-child(odd) {
+        grid-template-columns: 1fr;
+        padding-left: 56px;
+        gap: 0;
+    }
+    .about-path__item:nth-child(even) .about-path__content,
+    .about-path__item:nth-child(odd) .about-path__content {
+        grid-column: 1;
+    }
+    .about-path__spacer { display: none; }
+    .about-path__marker { top: 56px; left: 20px; width: 38px; height: 38px; font-size: 15px; }
+}
+
+/* ----- ≤ 620px : Values grid becomes a single column ----- */
+@media (max-width: 620px) {
+    .about-values__grid { grid-template-columns: 1fr; }
+}
+
+/* ----- ≤ 480px : Tighten hero & CTA padding on small phones ----- */
+@media (max-width: 480px) {
+    .about-hero { padding: 130px 16px 70px; }
+    .about-cta  { padding: 60px 20px; margin: 0 12px 70px; }
+}

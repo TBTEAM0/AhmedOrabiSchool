@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Classes | A.O.L.S</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="class.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="icon" type="image/png" href="images/Orabi.png">
+    </head>
+    <body>
+        <!-- ============================================================ -->
+        <!--  HEADER  -->
+        <!-- ============================================================ -->
+        <header>
+            <a href="/index.html" class="logo">A.O.L.S</a>
+            <!-- ============================================================ -->
+            <!--  NAV  #navbar  -->
+            <!-- ============================================================ -->
+            <nav id="navbar">
+                <ul>
+                    <li>
+                        <a href="/index.html" data-i18n="nav-home">HOME</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#stage" data-i18n="nav-class">CLASS</a>
+                    </li>
+                    <li>
+                        <a href="about.html" data-i18n="nav-about">ABOUT</a>
+                    </li>
+                    <li>
+                        <a href="contact.html" data-i18n="nav-contact">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <button class="lang-switch" id="langSwitch" type="button">
+                    <span class="ls-en">EN</span>
+                    <span class="ls-ar">AR</span>
+                </button>
+                <div class="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </header>
+        <!-- ============================================================ -->
+        <!--  SECTION  .classes  -->
+        <!-- ============================================================ -->
+        <section class="classes">
+            <div class="class-box">
+                <h1 data-i18n="class-choose-title">Choose Your Class</h1>
+                <div class="accordion">
+                    <button class="accordion-btn" data-i18n="accordion-kg">🎓 KG</button>
+                    <div class="content">
+                        <a href="kg.html" data-i18n="class-kg1">KG 1</a>
+                        <a href="kg.html" data-i18n="class-kg2">KG 2</a>
+                    </div>
+                    <button class="accordion-btn" data-i18n="accordion-primary">📚 Primary</button>
+                    <div class="content">
+                        <a href="primary.html" data-i18n="class-primary1">Primary 1</a>
+                        <a href="primary.html" data-i18n="class-primary2">Primary 2</a>
+                        <a href="primary.html" data-i18n="class-primary3">Primary 3</a>
+                        <a href="primary.html" data-i18n="class-primary4">Primary 4</a>
+                        <a href="primary.html" data-i18n="class-primary5">Primary 5</a>
+                        <a href="primary.html" data-i18n="class-primary6">Primary 6</a>
+                    </div>
+                    <button class="accordion-btn" data-i18n="accordion-preparatory">📝 Preparatory</button>
+                    <div class="content">
+                        <a href="preparatory.html" data-i18n="class-prep1">Preparatory 1</a>
+                        <a href="preparatory.html" data-i18n="class-prep2">Preparatory 2</a>
+                        <a href="preparatory.html" data-i18n="class-prep3">Preparatory 3</a>
+                    </div>
+                    <button class="accordion-btn" data-i18n="accordion-secondary">🎯 Secondary</button>
+                    <div class="content">
+                        <a href="secondary.html" data-i18n="class-sec1">Secondary 1</a>
+                        <a href="secondary.html" data-i18n="class-sec2">Secondary 2</a>
+                        <a href="secondary.html" data-i18n="class-sec3">Secondary 3</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="../script.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const buttons = document.querySelectorAll(".accordion-btn");
+
+        buttons.forEach(btn => {
+
+            btn.addEventListener("click", () => {
+
+                const content = btn.nextElementSibling;
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+
+            });
+
+        });
+
+    });
+</script>
+    </body>
+</html>

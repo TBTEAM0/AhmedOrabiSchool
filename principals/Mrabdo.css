@@ -1,0 +1,637 @@
+/* ======================================================================
+   Mr. Abdelrahman Rashed — principal profile
+   Cleaned & refactored — same selectors, same behavior.
+   ======================================================================   */
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Cairo",sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.45)
+    ),
+    url("/images/aols.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/*================ HEADER ================*/
+
+header {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,.95);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
+    z-index: 1000;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 800;
+    color: #2563eb;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg,#1d4ed8 0%,#2563eb 50%,#3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    padding: 4px 0;
+    transition: .3s;
+    filter: drop-shadow(0 2px 4px rgba(37,99,235,.2));
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+    align-items: center;
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,#2563eb,#60a5fa);
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease;
+}
+
+.logo:hover::before {
+    transform: scaleX(1);
+}
+
+.logo:hover {
+    filter: drop-shadow(0 4px 8px rgba(241,241,241,.4));
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 600;
+    font-size: 14.5px;
+    padding: 8px 18px;
+    position: relative;
+    transition: .3s;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    bottom: 2px;
+    width: calc(100% - 36px);
+    height: 2px;
+    background: #2563eb;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .3s ease;
+}
+
+nav ul li a:hover {
+    color: #2563eb;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+nav ul li a.active {
+    color: #2563eb;
+}
+
+nav ul li a.active::after {
+    transform: scaleX(1);
+}
+
+.menu-btn {
+    display: none;
+    font-size: 26px;
+    color: #2563eb;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    transition: background .2s ease,transform .2s ease;
+}
+
+.menu-btn:hover {
+    background: rgba(37,99,235,.1);
+    transform: scale(1.08);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/*================ LANGUAGE SWITCH ================*/
+
+.lang-switch {
+    padding: 4px;
+    border: 1.5px solid rgba(37,99,235,.3);
+    border-radius: 50px;
+    background: rgba(37,99,235,.08);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    transition: .3s;
+}
+
+/*================ MRABDO SECTION ================*/
+
+.mrabdo-activities {
+    padding: 130px 8% 80px;
+}
+
+.classes-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.classes-title h2 {
+    color: #fff;
+    font-size: 45px;
+    font-weight: 800;
+    margin: -30px auto 10px;
+}
+
+.classes-title p {
+    color: #ffe600;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.teacher-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: -30px auto 20px;
+    border: 4px solid #3b3b3b;
+    box-shadow: 0 0 20px #535353,
+        0 0 45px #525353;
+    transition: .4s ease;
+}
+
+.teacher-photo:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #f5f4f4,
+        0 0 60px #2b2b2b;
+}
+
+/*================ DROPDOWN ================*/
+
+.achievement-dropdown {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto 50px;
+    position: relative;
+}
+
+.achievement-btn {
+    width: 100%;
+    margin: -30px auto 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    border: none;
+    border-radius: 18px;
+    background: rgba(255,255,255,.15);
+    backdrop-filter: blur(15px);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+.achievement-btn:hover {
+    background: rgba(255,255,255,.22);
+}
+
+.achievement-btn .fa-images {
+    margin-right: 10px;
+    color: #ffe600;
+}
+
+.arrow {
+    transition: .3s;
+}
+
+.achievement-btn.active .arrow {
+    transform: rotate(180deg);
+}
+
+.achievement-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,.12);
+    backdrop-filter: blur(18px);
+    border-radius: 18px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: .35s;
+    box-shadow: 0 15px 35px rgba(0,0,0,.25);
+    z-index: 999;
+}
+
+.achievement-menu.show {
+    max-height: 450px;
+    opacity: 1;
+    overflow-y: auto;
+}
+
+.achievement-menu button {
+    width: 100%;
+    padding: 16px 22px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.achievement-menu button:hover {
+    background: rgba(255,255,255,.18);
+    color: #ffe600;
+}
+
+.achievement-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.achievement-menu::-webkit-scrollbar-thumb {
+    background: #ffe600;
+    border-radius: 20px;
+}
+
+.achievement-menu::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/*================ CONTENT ================*/
+
+.mrabdo-tab-content {
+    display: none;
+    animation: fade .4s ease;
+}
+
+.mrabdo-tab-content.active {
+    display: block;
+}
+
+/*================ GALLERY ================*/
+
+.championship-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 30px;
+}
+
+/*================ CARD ================*/
+
+.championship-card {
+    background: rgba(255,255,255,.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: .35s;
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+
+.championship-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0,0,0,.3);
+}
+
+.championship-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .35s;
+}
+
+.championship-card img:hover {
+    transform: scale(1.05);
+}
+
+.championship-card h3 {
+    margin-top: 18px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.championship-card p {
+    margin-top: 10px;
+    color: #dddddd;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/*================ POPUP ================*/
+
+.image-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.88);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.image-modal.show {
+    display: flex;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 15px;
+}
+
+.modal-content p {
+    color: #fff;
+    margin-top: 20px;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 45px;
+    cursor: pointer;
+}
+
+.lang-switch .ls-en, .lang-switch .ls-ar {
+    padding: 5px 13px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: #2563eb;
+    transition: background .3s,color .3s,box-shadow .3s;
+    line-height: 1;
+}
+
+.lang-switch .ls-active {
+    background: linear-gradient(135deg,#2563eb,#3b82f6);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(37,99,235,.4);
+}
+
+.lang-switch:hover {
+    border-color: rgba(37,99,235,.6);
+    box-shadow: 0 2px 10px rgba(37,99,235,.15);
+}
+
+/*================ RTL SUPPORT ================*/
+
+html[dir="rtl"] body {
+    font-family: 'Cairo',sans-serif;
+}
+
+header.scrolled {
+    height: 60px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.137), rgba(235, 245, 255, 0.048));
+    box-shadow: 0 2px 0 rgba(37,99,235,.25), 0 12px 40px rgba(0,0,0,.18);
+    transition: height .3s ease, box-shadow .3s ease;
+}
+
+/* اللوجو */
+
+header.scrolled .logo {
+    color: #fff;
+    background: none;
+    -webkit-text-fill-color: #fff;
+}
+
+/* اللينكات */
+
+header.scrolled nav ul li a {
+    color: #fdfdfd;
+}
+
+/* زر المنيو */
+
+header.scrolled .menu-btn {
+    color: #fff;
+}
+
+.championship-card video {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .35s;
+    background: #000;
+}
+
+.championship-card video:hover {
+    transform: scale(1.05);
+}
+
+#popupVideo {
+    display: none;
+    width: 100%;
+    max-width: 900px;
+    max-height: 75vh;
+    border-radius: 15px;
+    background: #000;
+    outline: none;
+}
+
+/* ============================================================
+   KEYFRAME ANIMATIONS
+   ============================================================ */
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — MEDIA QUERIES (largest → smallest)
+   ============================================================ */
+
+/* ---- BREAKPOINT — max-width: 768px ---- */
+
+@media (max-width:768px) {
+    header {
+        padding: 0 5%;
+    }
+    nav {
+        display: block;
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 280px;
+        height: calc(100vh - 70px);
+        background: rgba(255,255,255,.97);
+        backdrop-filter: blur(15px);
+        padding: 25px 20px;
+        transform: translateX(100%);
+        transition: transform .4s ease;
+        z-index: 999;
+        box-shadow: -5px 0 20px rgba(0,0,0,.15);
+    }
+    nav.active {
+        transform: translateX(0);
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav ul li {
+        width: 100%;
+    }
+    nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 14px 15px;
+        border-radius: 10px;
+    }
+    .menu-btn {
+        display: block;
+    }
+    .mrabdo-activities {
+        padding: 110px 5% 60px;
+    }
+    .classes-title h2 {
+        font-size: 30px;
+    }
+    .classes-title p {
+        font-size: 15px;
+    }
+    /*================ DROPDOWN ================*/
+    .achievement-dropdown {
+        width: 100%;
+        margin: 30px auto;
+    }
+    .achievement-btn {
+        padding: 15px 18px;
+        font-size: 16px;
+        border-radius: 15px;
+    }
+    .achievement-menu {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        width: 100%;
+        background: rgba(255,255,255,.12);
+        backdrop-filter: blur(18px);
+        border-radius: 18px;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: .3s;
+        z-index: 999;
+    }
+    .achievement-menu.show {
+        max-height: 450px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        overflow-y: auto;
+    }
+    .achievement-menu button {
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+    /*================ GALLERY ================*/
+    .championship-gallery {
+        grid-template-columns: repeat(2,1fr);
+        gap: 12px;
+    }
+    .championship-card {
+        padding: 10px;
+        border-radius: 14px;
+    }
+    .championship-card img {
+        width: 100%;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .championship-card h3 {
+        font-size: 15px;
+        margin-top: 10px;
+    }
+    .championship-card p {
+        font-size: 12px;
+        margin-top: 5px;
+        line-height: 1.4;
+    }
+    .championship-card video {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    #popupVideo {
+        width: 100%;
+        max-width: 100%;
+        max-height: 50vh;
+        border-radius: 12px;
+    }
+}

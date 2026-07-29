@@ -1,0 +1,220 @@
+/* ======================================================================
+   Class page
+   Cleaned & refactored — same selectors, same behavior.
+   ======================================================================   */
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins,sans-serif;
+    background: linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.45)
+    ),
+    url("../images/aols.png");
+    background-size: cover;
+}
+
+.classes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 120px 20px 40px;
+}
+
+.class-box {
+    width: 100%;
+    max-width: 700px;
+    background: rgba(247, 247, 247, 0.18);
+    backdrop-filter: blur(12px);
+    padding: 35px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    transition: .3s;
+}
+
+.class-box h1 {
+    text-align: center;
+    color: #eff0f1;
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+}
+
+.accordion {
+    width: 100%;
+}
+
+.accordion-btn {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: linear-gradient(135deg, #12121342 0%, #0528ec8a 100%);
+    color: #fff;
+    padding: 18px 22px;
+    margin-top: 15px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: .3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 6px 18px rgba(218, 220, 224, 0.35);
+    transition: background .3s ease, transform .3s ease, box-shadow .3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.accordion-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,.15), transparent 60%);
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.accordion-btn:hover {
+    background: linear-gradient(135deg, #1d4fd862 0%, #1746b7 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(37,99,235,.45);
+}
+
+.accordion-btn:hover::before {
+    opacity: 1;
+}
+
+.accordion-btn:active {
+    transform: translateY(-1px);
+}
+
+/* السهم الجانبي */
+
+.accordion-btn::after {
+    content: "\f078";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: .95rem;
+    transition: transform .35s ease;
+}
+
+.accordion-btn.active::after {
+    transform: rotate(180deg);
+}
+
+.accordion-btn.active {
+    background: linear-gradient(135deg, #1746b7 0%, #123a94 100%);
+    border-radius: 14px 14px 0 0;
+    margin-top: 7px;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 12px;
+    margin-top: 7px;
+    padding: 0 4px;
+}
+
+.content a {
+    text-decoration: none;
+    background: #f3f6fb;
+    color: #222;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.content a:hover {
+    background: #2563eb;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* ============================================================
+   RESPONSIVE — MEDIA QUERIES (largest → smallest)
+   ============================================================ */
+
+/* ---- BREAKPOINT — max-width: 992px ---- */
+
+@media (max-width:992px) {
+    .class-box {
+        max-width: 650px;
+    }
+    .class-box h1 {
+        font-size: 2rem;
+    }
+    .accordion-btn {
+        font-size: 1.15rem;
+    }
+}
+
+/* ---- BREAKPOINT — max-width: 768px ---- */
+
+@media (max-width:768px) {
+    .classes {
+        padding: 100px 15px 30px;
+    }
+    .class-box {
+        padding: 25px;
+    }
+    .class-box h1 {
+        font-size: 1.8rem;
+    }
+    .accordion-btn {
+        padding: 16px;
+        font-size: 1.05rem;
+    }
+    .content {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .content a {
+        padding: 14px;
+        font-size: .95rem;
+    }
+}
+
+/* ---- BREAKPOINT — max-width: 480px ---- */
+
+@media (max-width:480px) {
+    .classes {
+        padding: 90px 10px 20px;
+    }
+    .class-box {
+        padding: 18px;
+        border-radius: 15px;
+    }
+    .class-box h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    .accordion-btn {
+        font-size: 1rem;
+        padding: 15px;
+        border-radius: 10px;
+    }
+    .content {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .content a {
+        padding: 13px;
+        font-size: .9rem;
+    }
+}

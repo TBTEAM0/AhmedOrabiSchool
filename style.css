@@ -1,0 +1,1923 @@
+/* ======================================================================
+   A.O.L.S — Main stylesheet (index.html & shared)
+   Cleaned & refactored — same selectors, same behavior.
+   ======================================================================   */
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+/* ===========================
+   RESET
+=========================== */
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+.logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    margin-top: 100px; margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.school-logo img {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+}
+
+.wezara-logo,
+.school-logo{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: .4s ease;
+    flex-shrink: 0;
+}
+
+
+.wezara-logo{
+    background-image: url("/images/wezara.png");
+}
+
+.school-logo{
+    background-image: url("/images/logo.png");
+}
+
+
+
+
+  
+
+/* نفس تأثير الـ teacher-photo */
+.wezara-logo:hover,
+.school-logo:hover {
+    transform: scale(1.08);
+    box-shadow:
+        0 0 25px #f5f4f4,
+        0 0 60px #2b2b2b;
+}
+
+.wezara-logo img,
+.school-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s ease;
+}
+
+.wezara-logo:hover img,
+.school-logo:hover img {
+    transform: scale(1.1);
+}
+
+body {
+    margin: 0;
+    min-height: 100dvh;
+    background: linear-gradient(rgba(0, 0, 0, .45),
+            rgba(0, 0, 0, .45)),
+        url("images/aols.png");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ===========================
+    HEADER
+=========================== */
+
+header {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, .92) 0%,
+            rgba(240, 248, 255, .95) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 2px 0 rgba(37, 99, 235, .15),
+        0 8px 32px rgba(0, 0, 0, .12),
+        inset 0 1px 0 rgba(255, 255, 255, .9);
+    border-bottom: 2px solid transparent;
+    background-clip: padding-box;
+    z-index: 1000;
+    transition: background .6s ease,
+        box-shadow .6s ease,
+        backdrop-filter .6s ease;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,
+            transparent,
+            #2563eb,
+            #60a5fa,
+            #2563eb,
+            transparent);
+    opacity: .7;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    position: relative;
+    padding: 4px 0;
+    transition: .3s;
+    filter: drop-shadow(0 2px 4px rgba(37, 99, 235, .2));
+}
+
+.logo::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease;
+}
+
+.logo:hover::before {
+    transform: scaleX(1);
+}
+
+.logo:hover {
+    filter: drop-shadow(0 4px 8px rgba(241, 241, 241, 0.4));
+}
+
+nav ul {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 600;
+    font-size: 14.5px;
+    padding: 8px 18px;
+    position: relative;
+    transition: .3s;
+}
+
+/* الـ underline */
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    bottom: 2px;
+    width: calc(100% - 36px);
+    height: 2px;
+    background: #2563eb;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .3s ease;
+}
+
+/* عند الـ Hover */
+
+nav ul li a:hover {
+    color: #2563eb;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+/* اللينك النشط */
+
+nav ul li a.active {
+    color: #2563eb;
+}
+
+nav ul li a.active::after {
+    transform: scaleX(1);
+}
+
+.menu-btn {
+    display: none;
+    font-size: 26px;
+    color: #2563eb;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.menu-btn:hover {
+    background: rgba(37, 99, 235, .1);
+    transform: scale(1.08);
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 900px;
+    transition: transform .15s ease-out;
+    will-change: transform;
+}
+
+.hero-content h1 {
+    font-size: 70px;
+    line-height: 1.2;
+}
+
+.hero-content span {
+    color: #ffe600;
+}
+
+.hero-content p {
+    margin: 25px 0;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    background: rgba(255, 255, 255, .18);
+    border: 2px solid white;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    transition: .3s;
+}
+
+.btn:hover {
+    background: white;
+    color: #2563eb;
+    transform: translateY(-5px);
+}
+
+/* ===========================
+   TITLES
+=========================== */
+
+.title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 42px;
+    color: #fff;
+}
+
+.title h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #ffe600;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, .5);
+}
+
+.title p {
+    text-align: center;
+    margin-top: 15px;
+    color: white;
+}
+
+/* ===========================
+   GLOBAL GLASS CONTAINER
+=========================== */
+
+.glass-container {
+    background: rgba(255, 255, 255, .18);
+    backdrop-filter: blur(12px);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+}
+
+/* ===========================
+   FEATURES
+=========================== */
+
+.features {
+    padding: 100px 8%;
+}
+
+.feature-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, .18);
+    backdrop-filter: blur(12px);
+    padding: 35px 25px;
+    text-align: center;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card i {
+    font-size: 45px;
+    color: #ffe600;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.feature-card p {
+    color: #09aef0;
+    line-height: 1.7;
+}
+
+/* ===========================
+   SCHOOL STAGES
+=========================== */
+
+.stages {
+    padding: 100px 8%;
+}
+
+.stage-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.stage-card {
+    background: rgba(255, 255, 255, .18);
+    backdrop-filter: blur(12px);
+    padding: 35px;
+    text-align: center;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.stage-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, .28);
+}
+
+.stage-card i {
+    font-size: 45px;
+    color: #ffe600;
+    margin-bottom: 20px;
+}
+
+.stage-card h3 {
+    color: #09aef0;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.stage-card p {
+    color: white;
+    line-height: 1.7;
+}
+
+.stage-card a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, .2);
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.stage-card a:hover {
+    background: white;
+    color: #2563eb;
+}
+
+
+/* ===========================
+   STATISTICS
+=========================== */
+
+.stats {
+    padding: 80px 8%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, .18);
+    backdrop-filter: blur(12px);
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.stat-box:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, .28);
+}
+
+.stat-box i {
+    font-size: 45px;
+    color: #ffe600;
+    margin-bottom: 15px;
+}
+
+.stat-box h2 {
+    font-size: 35px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    color: #09aef0;
+}
+
+/* ===========================
+   TEACHERS
+=========================== */
+
+.teachers {
+    padding: 80px 8%;
+}
+
+.teacher-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.teacher-card {
+    background: rgba(255, 255, 255, .18);
+    backdrop-filter: blur(12px);
+    padding: 35px 20px;
+    text-align: center;
+    border-radius: 25px;
+    transition: .3s;
+}
+
+.teacher-card:hover {
+    transform: translateY(-10px);
+}
+
+.teacher-img {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2563eb;
+    color: white;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.teacher-card h3 {
+    color: #09aef0;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.teacher-card p {
+    color: white;
+}
+
+/* ===========================
+   GALLERY
+=========================== */
+
+.gallery {
+    padding: 100px 8%;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.gallery-card {
+    width: 320px;
+    background: rgba(255, 255, 255, .18);
+    backdrop-filter: blur(12px);
+    padding: 35px;
+    text-align: center;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.gallery-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, .28);
+}
+
+.gallery-card i {
+    font-size: 45px;
+    color: #ffe600;
+    margin-bottom: 20px;
+}
+
+.gallery-card h3 {
+    color: #09aef0;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.gallery-card p {
+    color: white;
+    line-height: 1.7;
+}
+
+.gallery-card a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, .2);
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.gallery-card a:hover {
+    background: white;
+    color: #2563eb;
+}
+
+/* ===========================
+   NEWS
+=========================== */
+
+.news {
+    padding: 100px 8%;
+}
+
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.news-card {
+    background: rgba(255, 255, 255, .18);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+}
+
+.news-card h3 {
+    color: #09aef0;
+    margin-bottom: 15px;
+}
+
+.news-card p {
+    color: white;
+    line-height: 1.7;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer {
+    background: linear-gradient(rgba(0, 0, 0, .45),
+            rgba(0, 0, 0, .45));
+    backdrop-filter: blur(10px);
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: auto;
+}
+
+footer p {
+    color: white;
+}
+
+footer h8 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #09aef0;
+    font-weight: bold;
+}
+
+.social {
+    margin-top: 20px;
+}
+
+.social a {
+    color: white;
+    margin: 10px;
+    font-size: 25px;
+    transition: color .3s ease, text-shadow .3s ease, transform .3s ease;
+    text-decoration: none;
+}
+
+.social a:hover {
+    color: #60a5fa;
+    transform: translateY(-3px);
+}
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: #ffe600;
+    z-index: 2000;
+    transition: width .1s linear;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity .4s ease, transform .4s ease;
+
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+
+}
+
+.card-tilt {
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.scroll-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: .3s;
+    z-index: 999;
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mouse-glow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle,
+            rgba(255, 230, 0, .18),
+            transparent 70%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+header.scroll {
+    background: rgba(255, 255, 255, 0.233);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    position: fixed;
+}
+
+header.scroll+.logo:hover {
+    color: white;
+}
+
+/* PAGE LOADER */
+
+.page-loader {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #0f172a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity .7s ease, visibility .7s ease;
+}
+
+.page-loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-logo {
+    font-size: 64px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    background: linear-gradient(135deg, #ffffff 0%, #93c5fd 40%, #ffe600 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: loaderPulse 1s ease-in-out infinite alternate;
+}
+
+/* HEADER SCROLLED */
+
+header.scrolled {
+    height: 60px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.301), rgba(235, 245, 255, 0.39));
+    box-shadow: 0 2px 0 rgba(37, 99, 235, .25), 0 12px 40px rgba(0, 0, 0, .18);
+    transition: height .3s ease, box-shadow .3s ease;
+}
+
+/* اللوجو */
+
+header.scrolled .logo {
+    color: #fff;
+    background: none;
+    -webkit-text-fill-color: #fff;
+}
+
+/* اللينكات */
+
+header.scrolled nav ul li a {
+    color: #fff;
+}
+
+/* زر المنيو */
+
+header.scrolled .menu-btn {
+    color: #fff;
+}
+
+/* فيسبوك */
+
+.social a.facebook:hover {
+    color: #1877f2;
+}
+
+/* يوتيوب */
+
+.social a.youtube:hover {
+    color: #ff0000;
+}
+
+/* تويتر / X */
+
+.social a.twitter:hover {
+    color: #1da1f2;
+}
+
+/* انستجرام - جراديانت حقيقي لأنه مش لون واحد */
+
+.gmail-icon {
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    top: 6px;
+}
+
+/* لما الماوس ييجي فوق الأيقونة */
+
+.gmail-icon:hover {
+    filter: none;
+}
+
+.members {
+    padding: 80px 8%;
+    align-items: center;
+}
+
+.members h2 {
+    color: #ffe600;
+    font-weight: bold;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    transition: .35s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(118, 119, 119, 0.363),
+        0 0 40px rgba(12, 12, 12, 0.2);
+}
+
+.card img,
+.profile-img {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 4px solid #3b3b3b;
+    box-shadow: 0 0 20px #535353,
+        0 0 45px #525353;
+    transition: .4s ease;
+}
+
+.card:hover img,
+.profile-img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #f5f4f4,
+        0 0 60px hsl(180, 1%, 17%);
+}
+
+.card h2 {
+    margin-bottom: 12px;
+    font-size: 28px;
+}
+
+.card p {
+    color: #ddd;
+    line-height: 1.7;
+}
+
+.card a:hover {
+    background: white;
+    color: #2563eb;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, .2);
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.credits {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dev-cridets {
+    display: flex;
+    flex-direction: row;
+}
+
+.dev-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.dev-link:hover {
+    animation: changing-colors;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    transition: 1s;
+}
+
+.gallery-box h3 {
+    margin-bottom: 15px;
+}
+
+.view-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: rgba(255, 255, 255, .2);
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+/* ===========================
+   HEADER RIGHT WRAPPER (LANG + MENU)
+=========================== */
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* ===========================
+   LANGUAGE SWITCH BUTTON
+=========================== */
+
+.lang-switch {
+    display: flex;
+    align-items: center;
+    background: rgba(37, 99, 235, .08);
+    border: 1.5px solid rgba(37, 99, 235, .3);
+    border-radius: 50px;
+    padding: 4px;
+    cursor: pointer;
+    gap: 2px;
+    transition: .3s;
+}
+
+.lang-switch .ls-en,
+.lang-switch .ls-ar {
+    padding: 5px 13px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: #2563eb;
+    transition: background .3s, color .3s, box-shadow .3s;
+    line-height: 1;
+}
+
+.lang-switch .ls-active {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, .4);
+}
+
+.lang-switch:hover {
+    border-color: rgba(37, 99, 235, .6);
+    box-shadow: 0 2px 10px rgba(37, 99, 235, .15);
+}
+
+/* ===========================
+   ARABIC FONT SUPPORT
+=========================== */
+
+html[dir="rtl"] body {
+    font-family: 'Cairo', sans-serif;
+}
+
+html[dir="rtl"] #navbar ul{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.classes-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.classes-title h2 {
+    font-size: 38px;
+    color: #f2f4f8;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.classes-title p {
+    font-weight: bold;
+    color: #f4f804;
+    font-size: 17px;
+}
+
+.classes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.class-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .12);
+    transition: .35s;
+    cursor: pointer;
+}
+
+.class-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, .18);
+}
+
+.class-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.class-card p {
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1d3557;
+}
+
+.activities {
+    padding: 140px 8% 80px;
+}
+
+.activity-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.tab-btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 40px;
+    background: #ffffff;
+    color: #0f4c81;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, .15);
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+    background: #0f4c81;
+    color: #fff;
+}
+
+.tab-content {
+    opacity: 0;
+    transform: scale(.95);
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    transition: all .35s ease;
+    pointer-events: none;
+}
+
+.tab-content.active {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    position: relative;
+    pointer-events: auto;
+}
+
+.championship-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.championship-card {
+    background: rgba(247, 247, 247, .18);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    transition: .3s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+}
+
+.championship-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .2);
+}
+
+.championship-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    display: block;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.championship-card img:hover {
+    transform: scale(1.05);
+}
+
+.championship-card h3 {
+    margin-top: 15px;
+    font-size: 22px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.championship-card p {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #ddd;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+/* ===========================
+   IMAGE MODAL
+=========================== */
+
+.image-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-modal.show {
+    display: flex;
+}
+
+.image-modal .modal-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 25px 20px 20px;
+    max-width: 90%;
+    max-height: 90vh;
+    text-align: center;
+    position: relative;
+    overflow: auto;
+}
+
+.image-modal .modal-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+.image-modal .modal-content p {
+    color: white;
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.image-modal .close {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    line-height: 1;
+    transition: .3s;
+    z-index: 1;
+}
+
+.image-modal .close:hover {
+    color: #ffe600;
+    transform: scale(1.2);
+}
+
+#popupText {
+    white-space: pre-line;
+}
+
+.feature-card i,
+.stage-card i {
+    transform: translateZ(40px);
+}
+
+/* ============================================================
+   KEYFRAME ANIMATIONS
+   ============================================================ */
+
+@keyframes loaderPulse {
+    from {
+        transform: scale(1);
+        opacity: .85;
+    }
+
+    to {
+        transform: scale(1.07);
+        opacity: 1;
+    }
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: .25;
+    }
+
+    25% {
+        transform: translateY(-35px) translateX(15px);
+        opacity: .7;
+    }
+
+    50% {
+        transform: translateY(-70px) translateX(-12px);
+        opacity: .35;
+    }
+
+    75% {
+        transform: translateY(-40px) translateX(22px);
+        opacity: .65;
+    }
+
+    100% {
+        transform: translateY(0) translateX(0);
+        opacity: .25;
+    }
+}
+
+@keyframes rippleAnim {
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+@keyframes changing-colors {
+    0% {
+        color: white;
+    }
+
+    25% {
+        color: cyan;
+        font-size: 18px;
+    }
+
+    50% {
+        color: white;
+    }
+
+    75% {
+        color: cyan;
+        font-size: 18px;
+    }
+
+    100% {
+        color: white
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — MEDIA QUERIES (largest → smallest)
+   ============================================================ */
+
+/* ---- BREAKPOINT — max-width: 1200px ---- */
+
+@media (max-width:1200px) {
+    .hero-content h1 {
+        font-size: 60px;
+    }
+}
+
+/* ---- BREAKPOINT — max-width: 992px ---- */
+
+@media (max-width:992px) {
+    .feature-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stage-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .teacher-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content h1 {
+        font-size: 50px;
+    }
+
+    nav ul {
+        gap: 4px;
+    }
+
+    nav ul li a {
+        padding: 7px 13px;
+        font-size: 13.5px;
+    }
+}
+
+/* ---- BREAKPOINT — max-width: 768px ---- */
+
+@media (max-width:768px) {
+    .features {
+        padding: 70px 5%;
+    }
+
+    .feature-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 15px;
+    }
+
+    .feature-card {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+
+    .feature-card i {
+        font-size: 32px;
+        margin-bottom: 11px;
+    }
+
+    .feature-card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .feature-card p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    header.scrolled nav {
+        background: rgba(255, 255, 255, .96);
+        top: 60px;
+    }
+
+    header.scrolled nav ul li a {
+        color: #374151 !important;
+    }
+
+    header.scrolled nav ul li a:hover {
+        color: #1d4ed8 !important;
+    }
+
+    header.scrolled nav ul li a.active {
+        color: #2563eb !important;
+    }
+
+    header.scrolled nav ul li a::after {
+        background: linear-gradient(90deg, #2563eb, #60a5fa);
+    }
+
+    .stages {
+        padding: 70px 5%;
+    }
+
+    .stage-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 15px;
+    }
+
+    .stage-card {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+
+    .stage-card i {
+        font-size: 30px;
+        margin-bottom: 12px;
+    }
+
+    .stage-card h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .stage-card p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .stage-card a {
+        margin-top: 15px;
+        padding: 8px 18px;
+        font-size: 13px;
+    }
+
+
+    .gallery {
+        padding: 70px 5%;
+    }
+
+    .gallery-container {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .gallery-card {
+        width: 220px;
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+
+    .gallery-card i {
+        font-size: 30px;
+        margin-bottom: 12px;
+    }
+
+    .gallery-card h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .gallery-card p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .gallery-card a {
+        margin-top: 15px;
+        padding: 8px 18px;
+        font-size: 13px;
+    }
+
+    .stats {
+        padding: 60px 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 15px;
+    }
+
+    .stat-box {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+
+    .stat-box i {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .stat-box h2 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .stat-box p {
+        font-size: 13px;
+    }
+
+    .news {
+        padding: 70px 5%;
+    }
+
+    .news-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .news-card {
+        padding: 18px;
+        border-radius: 15px;
+    }
+
+    .news-card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .news-card p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    header {
+        height: 75px;
+        padding: 0 20px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    /* ===========================
+       شكل احلى للمنيو نفسها
+    =========================== */
+    nav {
+        position: fixed;
+        top: 75px;
+        right: -300px;
+        width: 280px;
+        height: 100vh;
+        background: rgba(255, 255, 255, .96);
+        backdrop-filter: blur(20px);
+        box-shadow: -4px 0 30px rgba(0, 0, 0, .12);
+        transition: .4s cubic-bezier(.4, 0, .2, 1);
+        border-left: 1px solid rgba(37, 99, 235, .15);
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    /* ===========================
+       OVERLAY خلف المنيو
+    =========================== */
+    .nav-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, .55);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .4s ease, visibility .4s ease;
+        z-index: 998;
+    }
+
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, #2563eb, #60a5fa, #2563eb);
+    }
+
+    /* ===========================
+       حركة دخول متتالية للروابط
+    =========================== */
+    nav ul li {
+        opacity: 0;
+        transform: translateX(30px);
+        transition: opacity .45s ease, transform .45s ease;
+        width: 80%;
+    }
+
+    nav.active ul li {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    nav.active ul li:nth-child(1) {
+        transition-delay: .10s;
+    }
+
+    nav.active ul li:nth-child(2) {
+        transition-delay: .16s;
+    }
+
+    nav.active ul li:nth-child(3) {
+        transition-delay: .22s;
+    }
+
+    nav.active ul li:nth-child(4) {
+        transition-delay: .28s;
+    }
+
+    nav.active ul li:nth-child(5) {
+        transition-delay: .34s;
+    }
+
+    nav.active ul li:nth-child(6) {
+        transition-delay: .40s;
+    }
+
+    /* ===========================
+       شكل احلى للروابط جوه المنيو
+    =========================== */
+    nav ul li a {
+        position: relative;
+        font-size: 16px;
+        color: #374151;
+        overflow: hidden;
+        display: block;
+        text-align: center;
+        border-radius: 12px;
+        padding: 12px 20px;
+    }
+
+    nav ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: 6px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #2563eb, #60a5fa);
+        transition: width .3s ease, left .3s ease;
+    }
+
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+        width: 60%;
+        left: 20%;
+    }
+
+    nav ul li a:hover {
+        background: linear-gradient(135deg, rgba(37, 99, 235, .1), rgba(96, 165, 250, .08));
+        color: #1d4ed8;
+    }
+
+    /* ===========================
+       ايقونة الفتح / القفل (زرار الهامبرجر)
+    =========================== */
+    .menu-btn i {
+        transition: transform .35s ease;
+        display: inline-block;
+    }
+
+    .menu-btn:has(.fa-xmark) i,
+    .menu-btn i.fa-xmark {
+        transform: rotate(180deg);
+    }
+
+    /* ===========================
+       قفل السكرول لما المنيو مفتوحة
+    =========================== */
+    body.nav-open {
+        overflow: hidden;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 100px 20px 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 90%;
+    }
+
+    .feature-container,
+    .stage-container,
+    .stats,
+    .teacher-container,
+    .gallery-container,
+    .news-container {
+        grid-template-columns: 1fr;
+    }
+
+    .title h2 {
+        font-size: 32px;
+    }
+
+    .title {
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .card {
+        padding: 15px 10px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card img,
+    .profile-img {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 15px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .card p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .card a {
+        margin-top: auto;
+        padding: 8px 18px;
+        font-size: 13px;
+    }
+
+    .championship-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 10px;
+    }
+
+    .championship-card {
+        padding: 12px;
+        border-radius: 15px;
+    }
+
+    .championship-card img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .championship-card h3 {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .championship-card p {
+        font-size: 12px;
+        margin-top: 5px;
+        line-height: 1.4;
+    }
+}
+
+/* ---- BREAKPOINT — max-width: 480px ---- */
+
+@media (max-width:480px) {
+    .logos{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.logo-photo{
+    width: 155px;
+    height: 155px;
+
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    margin: 0;
+    padding: 0;
+
+    transition: .4s ease;
+}
+
+
+.wezara-logo,
+.school-logo{
+    width: 150px;
+    height: px;
+}
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .btn {
+        padding: 14px;
+    }
+
+    .feature-card,
+    .stage-card,
+    .stat-box,
+    .teacher-card,
+    .news-card {
+        padding: 25px 15px;
+    }
+}
+header{
+    direction: ltr !important;
+}
+

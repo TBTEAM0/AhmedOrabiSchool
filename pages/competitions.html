@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        School Competitions
+    </title>
+    <link href="../images/Orabi.png" rel="icon" type="image/png" />
+    <link href="../style.css" rel="stylesheet" />
+    <link href="school_activities.css" rel="stylesheet" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <!-- ================= IMAGE POPUP ================= -->
+    <div class="image-modal" id="imageModal">
+        <span class="close">
+            ×
+        </span>
+        <div class="modal-content">
+            <img alt="" id="popupImage" src="" />
+            <video controls="" id="popupVideo" style="display:none;">
+                <source src="" type="video/mp4" />
+            </video>
+            <p id="popupText">
+            </p>
+        </div>
+    </div>
+    <!-- ================= HEADER ================= -->
+    <header>
+        <a class="logo" href="../index.html">
+            A.O.L.S
+        </a>
+        <!-- ============================================================ -->
+        <!--  NAV  #navbar  -->
+        <!-- ============================================================ -->
+        <nav id="navbar">
+            <ul>
+                <li>
+                    <a data-i18n="nav-home" href="../index.html">
+                        HOME
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-principals" href="../index.html#members">
+                        PRINCIPALS
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-class" href="../index.html#stage">
+                        CLASS
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-about" href="../pages/about.html">
+                        ABOUT
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-contact" href="../pages/contact.html">
+                        CONTACT
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <button class="lang-switch" id="langSwitch" type="button">
+                <span class="ls-en">
+                    EN
+                </span>
+                <span class="ls-ar">
+                    AR
+                </span>
+            </button>
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars">
+                </i>
+            </div>
+        </div>
+    </header>
+    <!-- ================= Activities ================= -->
+    <section class="school-activities">
+        <div class ="school-logo">
+        </div>
+        <div class="classes-title">
+            <p data-i18n="competition-desc2">
+                Select an competition to view its gallery
+            </p>
+        </div>
+        <!-- ================= DROPDOWN ================= -->
+        <div class="activity-dropdown">
+            <button class="activity-btn" id="activityBtn">
+                <span data-i18n-html="competitions-dropdown-title" id="Activitytitle">
+                    <i class="fa-solid fa-trophy"></i>
+                    <i class="fa-solid fa-images">
+                    </i>
+                    Ahmed Orabi Language School competitions
+                </span>
+                <i class="fa-solid fa-chevron-down arrow">
+                </i>
+            </button>
+            <div class="activity-menu" id="activityMenu">
+                <button data-gallery="abakera" data-i18n="activity-abakera">
+                    Al-Abakera
+                </button>
+                <button data-gallery="Chess" data-i18n="activity-Chess">
+                    Chess
+                </button>
+
+                 <button data-gallery="football" data-i18n="achievement-football">
+                    Football Competition 2023
+                </button>
+            </button>
+            <button data-gallery="PurpleComet" data-i18n="activity-purplecomet">
+                Purple Comet
+            </button>
+            <button data-gallery="deutsch" data-i18n="activity-deutsch">
+                German Competition
+            </button>
+            
+            <button data-gallery="Math" data-i18n="activity-math">
+                Mathematics Competition
+            </button>
+            <button data-gallery="GizaCompetition" data-i18n="achievement-giza">
+                Giza Competition
+            </button>
+            <button data-gallery="boxing" data-i18n="achievement-boxing">
+                Kick Boxing
+            </button>
+                <!-- <button data-gallery="alr" data-i18n="activity-alr">
+                    Administration-Level Ranking
+                </button>
+                <button data-gallery="GizaCompetition" data-i18n="activity-giza">
+                    Giza Competition
+                </button>
+                <button data-gallery="karate">Karate</button>
+                <button data-gallery="boxing" data-i18n="activity-boxing">
+                    Kick Boxing
+                </button>
+                <button data-gallery="Kgvisits" data-i18n="activity-kgvisits">
+                    KG Visits
+                </button>
+                <button data-gallery="camera" data-i18n="activity-camera">
+                    School Insurance
+                </button>
+                <button data-gallery="Latestbuildings" data-i18n="activity-buildings">
+                    Latest Buildings
+                </button>
+                <button data-gallery="Schooldecoration" data-i18n="activity-decoration">
+                    School Decoration
+                </button>
+                <button data-gallery="Schoolagriculture" data-i18n="activity-agriculture">
+                    School Agriculture
+                </button>
+                <button data-gallery="Honoring" data-i18n="activity-honoring">
+                    Honoring
+                </button>
+                <button data-gallery="HonoringMrAbdelRahman" data-i18n="activity-honoring-mr">
+                    Honoring Mr. Abdelrahman
+                </button>
+                <button data-gallery="party" data-i18n="activity-party">
+                    Party
+                </button>
+                <button data-gallery="dp" data-i18n="activity-dp">
+                    Dream Park
+                </button>
+                <button data-gallery="Hospital" data-i18n="activity-hospital">
+                    57357 Hospital
+                </button>
+                <button data-gallery="Aml" data-i18n="activity-aml">
+                    Amal Mubarak's Visit
+                </button>
+                <button data-gallery="Corridor" data-i18n="activity-corridor">
+                    Corridor
+                <button data-gallery="ChildhoodDay" data-i18n="activity-childhood">
+                    Childhood Day
+                </button>
+                <button data-gallery="camp" data-i18n="activity-camp">
+                    School Camp
+                </button> -->
+                
+            </div>
+        </div>
+        <!-- ================= GALLERY ================= -->
+        <div class="championship-gallery" id="galleryContainer">
+            <!-- سيتم إنشاء الكروت تلقائياً بالجافاسكربت -->
+        </div>
+    </section>
+
+    <script src="../script.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const btn = document.getElementById("activityBtn");
+        const menu = document.getElementById("activityMenu");
+        const title = document.getElementById("Activitytitle");
+        const gallery = document.getElementById("galleryContainer");
+
+        // 1) بتقرا اللغة الحالية من نفس نظام script.js
+        function getLang() {
+            return document.documentElement.getAttribute("lang") === "ar" ? "ar" : "en";
+        }
+
+        // 3) بتدعم الشكلين: description كـ string عادي (زي الأقسام اللي لسه ماتترجمتش)
+        //    أو description كـ {en, ar} (زي abakera اللي ترجمناها)
+        function getDescriptionText(item) {
+            if (!item || !item.description) return "";
+            if (typeof item.description === "object") {
+                const lang = getLang();
+                return item.description[lang] || item.description.en || "";
+            }
+            return item.description;
+        }
+
+        btn.onclick = () => {
+            menu.classList.toggle("show");
+            btn.classList.toggle("active");
+        };
+
+        document.addEventListener("click", (e) => {
+            if (!e.target.closest(".activity-dropdown")) {
+                menu.classList.remove("show");
+                btn.classList.remove("active");
+            }
+        });
+
+        /* ======================
+           ضع الصور هنا
+        ======================= */
+
+        const galleries = {
+
+            // 2) القسم ده بس اتترجم
+            abakera: [
+                {
+                    img: "../images/Orabis1d32.png",
+                    title: "Click To View",
+                    description: {
+                        en: "The first season of Al-Abqara was our team's first participation and it was our first match. We presented a very strong performance and won the last question.\n\nThe Players Are:\n1. Youssef Tarek\n2. Lojain Ahmed\n3. Jannat Ahmed\n4. Yassin Ahmed\n5. Karma Mustafa\n6. Mariam Ashraf\n7. Omar Khaled\n8. Adam Ahmed",
+                        ar: "كان الموسم الأول من مسابقة العباقرة أول مشاركة لفريقنا، وكانت أول مباراة لنا. قدّمنا أداء قوي جدًا وفزنا بالسؤال الأخير.\n\nاللاعبون هم:\n1. يوسف طارق\n2. لجين أحمد\n3. جنة أحمد\n4. ياسين أحمد\n5. كرمة مصطفى\n6. مريم أشرف\n7. عمر خالد\n8. آدم أحمد"
+                    }
+                },
+                {
+                    img: "../images/Orabis1d16.png",
+                    title: "Click To View",
+                    description: {
+                        en: "Our second match in the first season was in Al-Abqara in the first season, and unfortunately we were not lucky and lost",
+                        ar: "مباراتنا الثانية في الموسم الأول من مسابقة العباقرة، وللأسف لم يحالفنا الحظ وخسرنا"
+                    }
+                },
+                {
+                    img: "../images/Orabis2d32.jpeg",
+                    title: "Click To View",
+                    description: {
+                        en: "Second season qualifiers",
+                        ar: "تصفيات الموسم الثاني"
+                    }
+                }
+            ],
+
+            Chess: [
+                {
+                    img: "../AolsActivies/Chessmm.jpeg",
+                    title: "Click To View",
+                    description: {
+                        en: "Chess Champion  (MAHMOUD IBRAHIM , MAHMOUD EHAB)",
+                        ar: "بطوله الشطرنج (محمود ابراهيم , محمود ايهاب )"
+                    }
+                }
+            ],
+
+            football: [
+            {
+                img: "../MrAbdoAchive/football1.jpg",
+                title: "Click To View",
+                description: {
+                    en: `The final of the 2023 football championship.
+
+HEAD COACH : SAMEH MOHAMED
+Players:
+- Refaaie Sayed Refaaie
+- Marwan Mohamed Samir
+- Mahmoud Nasser
+- Mohamed El Sayed Ahmed
+- Joseph Youssef
+- Omar Khaled
+- Abdullah Walid
+- Abdelrahman Mahmoud Manaa`,
+                    ar: `نهائي بطولة كرة القدم لعام 2023.
+
+المدرب العام: سامح محمد
+اللاعبون:
+- رفاعي سيد رفاعي
+- مروان محمد سمير
+- محمود ناصر
+- محمد السيد أحمد
+- جوزيف يوسف
+- عمر خالد
+- عبدالله وليد
+- عبدالرحمن محمود مناع`
+                }
+            },
+            { img: "../MrAbdoAchive/football2.jpg", title: "Click To View",description: { en: "2023 football championship", ar: "بطولة كرة القدم 2023" } },
+            { img: "../MrAbdoAchive/football3.jpg", title: "Click To View",description: { en: "2023 football championship", ar: "بطولة كرة القدم 2023" } }
+        ],
+
+            Thelittlecreator: [
+                { img: "../MrAbdoAchive/Creative child1.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/Creative child2.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/Creative child3.jpg", title: "Click To View", description: "Chess Championship" }
+            ],
+
+            alr: [
+                { img: "../AolsActivies/alr.png", title: "Click To View", description: "Administration-Level Ranking" },
+                { img: "../AolsActivies/alr2.png", title: "Click To View", description: "Administration-Level Ranking" },
+                { img: "../AolsActivies/alr3.png", title: "Click To View", description: "Administration-Level Ranking" },
+                { img: "../AolsActivies/alr4.png", title: "Click To View", description: "Administration-Level Ranking" },
+                { img: "../AolsActivies/alr5.png", title: "Click To View", description: "Administration-Level Ranking" },
+                { img: "../AolsActivies/alr6.png", title: "Click To View", description: "Administration-Level Ranking" },
+                { img: "../AolsActivies/alr7.png", title: "Click To View", description: "Administration-Level Ranking" }
+            ],
+
+
+            karate: [
+                { img: "../MrAbdoAchive/football1.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/football2.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/football3.jpg", title: "Click To View", description: "Chess Championship" }
+            ],
+
+            boxing: [
+                { img: "../MrAbdoAchive/boxing1.jpg", description: { en: "Kick boxing competition", ar: "مسابقة الكيك بوكسينج" } }
+            ],
+            Kgvisits: [
+                { img: "../MrAbdoAchive/kg1.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/kg2.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/kg3.jpg", title: "Click To View", description: "Chess Championship" }
+            ],
+
+            camera: [
+                { img: "../MrAbdoAchive/camera1.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/camera2.jpg", title: "Click To View", description: "Chess Championship" }
+            ],
+
+            Latestbuildings: [
+                { img: "../MrAbdoAchive/build1.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/build2.jpg", title: "Click To View", description: "Chess Championship" }
+            ],
+
+            Schooldecoration: [
+                { img: "../MrAbdoAchive/Decoration1.jpg", title: "Click To View", description: "Chess Championship" }
+            ],
+
+            Schoolagriculture: [
+                { img: "../MrAbdoAchive/Tree1.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/Tree2.jpg", title: "Click To View", description: "Chess Championship" }
+            ],
+
+            Honoring: [
+                { img: "../MrAbdoAchive/Honoring1.jpg", title: "Click To View", description: "Chess Championship" }
+            ],
+
+            HonoringMrAbdelRahman: [
+                { img: "../MrAbdoAchive/mr1.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/mr2.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/mr3.jpg", title: "Click To View", description: "Chess Championship" }
+            ],
+
+            party: [
+                { img: "../MrAbdoAchive/party1.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/party2.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/party3.jpg", title: "Click To View", description: "Chess Championship" }
+            ],
+
+            dp: [
+                { img: "../MrAbdoAchive/dp1.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/dp2.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/dp3.jpg", title: "Click To View", description: "Chess Championship" }
+            ],
+
+            Hospital: [
+                { img: "../MrAbdoAchive/Hospital1.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/Hospital2.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/Hospital3.jpg", title: "Click To View", description: "Chess Championship" },
+                { type: "video", src: "../MrAbdoAchive/HospitalVideo1.mp4", title: "Hospital Video", description: "Hospital Tour" }
+            ],
+
+            Aml: [
+                { img: "../MrAbdoAchive/aml1.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/aml2.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/aml3.jpg", title: "Click To View", description: "Chess Championship" }
+            ],
+
+            Corridor: [
+                { img: "../MrAbdoAchive/Corridor1.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/Corridor2.jpg", title: "Click To View", description: "Chess Championship" }
+            ],
+
+            PurpleComet: [
+                { img: "../MrAbdoAchive/pc1.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/pc2.jpg", title: "Click To View", description: "Chess Championship" },
+                { img: "../MrAbdoAchive/pc3.jpg", title: "Click To View", description: "Chess Championship" }
+            ],
+
+            deutsch: [
+                {
+                    img: "../MrAbdoAchive/deutsch1.jpg",
+                    title: "Click To View",
+                    description: `Ahmed Orabi Official Language School successfully passed the first and second qualification rounds of the International German Language Olympiad at the national level.
+
+Student Sara Abdelrahman Rashed , a Grade 8 student, achieved outstanding results in the first stage of the competition, held from March 13 to March 16, 2022. Out of 63 participants, only 30 students qualified for the second round.
+
+She then completed the Listening and Writing examination at the Goethe-Institut on Saturday, March 19, 2022. The exam lasted for two hours and marked another important achievement in her journey toward the International German Language Olympiad.`
+                },
+                {
+                    img: "../MrAbdoAchive/deutsch2.jpg",
+                    title: "Click To View",
+                    description: `Ahmed Orabi Official Language School successfully passed the first and second qualification rounds of the International German Language Olympiad at the national level.
+
+Student Sara Abdelrahman Mohamed, a Grade 8 student, achieved outstanding results in the first stage of the competition, held from March 13 to March 16, 2022. Out of 63 participants, only 30 students qualified for the second round.
+
+She then completed the Listening and Writing examination at the Goethe-Institut on Saturday, March 19, 2022. The exam lasted for two hours and marked another important achievement in her journey toward the International German Language Olympiad.`
+                }
+            ],
+
+            Theatercompetition: [
+                { img: "../MrAbdoAchive/tc1.jpg", title: "Click To View", description: "Goethe Institut" },
+                { img: "../MrAbdoAchive/tc2.jpg", title: "Click To View", description: "Goethe Institut" }
+            ],
+
+            Math: [
+                { img: "../MrAbdoAchive/mc1.jpg", description: { en: "Mathematics competition", ar: "مسابقة الرياضيات" } },
+                { img: "../MrAbdoAchive/mc2.jpg", description: { en: "Mathematics competition", ar: "مسابقة الرياضيات" } }
+            ],
+
+            ChildhoodDay: [
+                { img: "../MrAbdoAchive/cd1.jpg", title: "Click To View", description: "Goethe Institut" },
+                { img: "../MrAbdoAchive/cd2.jpg", title: "Click To View", description: "Goethe Institut" },
+                { img: "../MrAbdoAchive/cd3.jpg", title: "Click To View", description: "Goethe Institut" }
+            ],
+
+            camp: [
+                { img: "../MrAbdoAchive/camp1.jpg", title: "Click To View", description: "Goethe Institut" },
+                { img: "../MrAbdoAchive/camp2.jpg", title: "Click To View", description: "Goethe Institut" },
+                { img: "../MrAbdoAchive/camp3.jpg", title: "Click To View", description: "Goethe Institut" },
+                { img: "../MrAbdoAchive/camp4.jpg", title: "Click To View", description: "Goethe Institut" }
+            ],
+
+            
+        GizaCompetition: [
+            { img: "../MrAbdoAchive/giza1.jpg", description: { en: "Giza Competition", ar: "مسابقة الجيزة" } },
+            { img: "../MrAbdoAchive/giza2.jpg", description: { en: "Giza Competition", ar: "مسابقة الجيزة" } }
+        ],
+
+         PurpleComet: [
+                { img: "../MrAbdoAchive/pc1.jpg", description: { en: "Purple Comet competition", ar: "مسابقة Purple Comet" } },
+                { img: "../MrAbdoAchive/pc2.jpg", description: { en: "Purple Comet competition", ar: "مسابقة Purple Comet" } },
+                { img: "../MrAbdoAchive/pc3.jpg", description: { en: "Purple Comet competition", ar: "مسابقة Purple Comet" } }
+            ],
+            
+            deutsch: [
+                {
+                    img: "../MrAbdoAchive/deutsch1.jpg",
+                    description: {
+                        en: `Ahmed Orabi Official Language School successfully passed the first and second qualification rounds of the International German Language Olympiad at the national level.
+
+Student Sara Abdelrahman Rashed, a Grade 8 student, achieved outstanding results in the first stage of the competition, held from March 13 to March 16, 2022. Out of 63 participants, only 30 students qualified for the second round.
+
+She then completed the Listening and Writing examination at the Goethe-Institut on Saturday, March 19, 2022. The exam lasted for two hours and marked another important achievement in her journey toward the International German Language Olympiad.`,
+                        ar: `اجتازت مدرسة أحمد عرابي الرسمية لغات بنجاح الدورين التأهيليين الأول والثاني لأولمبياد اللغة الألمانية الدولي على المستوى القومي.
+
+حققت الطالبة سارة عبدالرحمن راشد، طالبة الصف الثامن، نتائج متميزة في المرحلة الأولى من المسابقة، التي أُقيمت من 13 إلى 16 مارس 2022. من إجمالي 63 مشاركًا، تأهل 30 طالبًا فقط للدور الثاني.
+
+بعدها أدّت الطالبة اختبار الاستماع والكتابة في معهد جوته يوم السبت 19 مارس 2022، واستمر الاختبار لمدة ساعتين، ليكون إنجازًا مهمًا آخر في رحلتها نحو أولمبياد اللغة الألمانية الدولي.`
+                    }
+                },
+                {
+                    img: "../MrAbdoAchive/deutsch2.jpg",
+                    description: {
+                        en: `Ahmed Orabi Official Language School successfully passed the first and second qualification rounds of the International German Language Olympiad at the national level.
+
+Student Sara Abdelrahman Mohamed, a Grade 8 student, achieved outstanding results in the first stage of the competition, held from March 13 to March 16, 2022. Out of 63 participants, only 30 students qualified for the second round.
+
+She then completed the Listening and Writing examination at the Goethe-Institut on Saturday, March 19, 2022. The exam lasted for two hours and marked another important achievement in her journey toward the International German Language Olympiad.`,
+                        ar: `اجتازت مدرسة أحمد عرابي الرسمية لغات بنجاح الدورين التأهيليين الأول والثاني لأولمبياد اللغة الألمانية الدولي على المستوى القومي.
+
+حققت الطالبة سارة عبدالرحمن محمد، طالبة الصف الثامن، نتائج متميزة في المرحلة الأولى من المسابقة، التي أُقيمت من 13 إلى 16 مارس 2022. من إجمالي 63 مشاركًا، تأهل 30 طالبًا فقط للدور الثاني.
+
+بعدها أدّت الطالبة اختبار الاستماع والكتابة في معهد جوته يوم السبت 19 مارس 2022، واستمر الاختبار لمدة ساعتين، ليكون إنجازًا مهمًا آخر في رحلتها نحو أولمبياد اللغة الألمانية الدولي.`
+                    }
+                }
+            ],
+
+            // كمل باقي الـ33 بنفس الشكل
+
+        };
+
+        // 5) بتتبع اسم الجاليري المفتوحة حاليًا عشان نلاقي العنصر تاني وقت الضغط أو تغيير اللغة
+        let currentGalleryName = null;
+        let currentOpenIndex = null;
+        function loadGallery(name) {
+
+            currentGalleryName = name;
+            gallery.innerHTML = "";
+
+            if (!galleries[name]) return;
+
+            const lang = getLang();
+            const cardLabel = (translations[lang] && translations[lang]["click-view"]) || "Click To View";
+
+            galleries[name].forEach((item, index) => {
+
+                const path = item.img || item.src;
+                const isVideo = item.type === "video";
+                gallery.innerHTML += `
+
+<div class="championship-card">
+
+    ${isVideo
+                        ?
+                        `<video
+            src="${path}"
+            data-index="${index}"
+            controls>
+        </video>`
+                        :
+                        `<img
+            src="${path}"
+            alt="${cardLabel}"
+            data-index="${index}">`
+                    }
+
+    <h3>${cardLabel}</h3>
+
+</div>
+
+`;
+
+            });
+
+        }
+
+        document.querySelectorAll("#activityMenu button").forEach(button => {
+
+            button.onclick = () => {
+
+                title.innerHTML =
+                    `<i class="fa-solid fa-images"></i> ${button.textContent}`;
+
+                loadGallery(button.dataset.gallery);
+
+                menu.classList.remove("show");
+                btn.classList.remove("active");
+
+            };
+
+        });
+
+        const modal = document.getElementById("imageModal");
+        const popupImage = document.getElementById("popupImage");
+        const popupVideo = document.getElementById("popupVideo");
+        const popupText = document.getElementById("popupText");
+
+        gallery.addEventListener("click", (e) => {
+
+            const img = e.target.closest(".championship-card img");
+            const video = e.target.closest(".championship-card video");
+
+            if (img) {
+
+                const index = Number(img.dataset.index);
+                currentOpenIndex = index;
+                const item = galleries[currentGalleryName][index];
+
+                popupVideo.pause();
+                popupVideo.style.display = "none";
+                popupVideo.src = "";
+
+                popupImage.style.display = "block";
+                popupImage.src = img.src;
+
+                popupText.textContent = getDescriptionText(item);
+
+                modal.classList.add("show");
+
+            }
+
+            if (video) {
+                // خلي الفيديو يشتغل في الكارد فقط
+                return;
+            }
+
+        });
+
+        document.querySelector(".close").onclick = () => {
+
+            modal.classList.remove("show");
+
+            popupVideo.pause();
+            popupVideo.currentTime = 0;
+
+            // رجّع فيديو الكارد يفضل موقوف
+            document.querySelectorAll(".championship-card video").forEach(v => {
+                v.pause();
+            });
+
+            currentOpenIndex = null;
+
+        };
+
+        modal.onclick = (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("show");
+                popupVideo.pause();
+                popupVideo.currentTime = 0;
+                currentOpenIndex = null;
+            }
+        };
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                modal.classList.remove("show");
+                popupVideo.pause();
+                popupVideo.currentTime = 0;
+                currentOpenIndex = null;
+            }
+        });
+
+        const langSwitchBtn = document.getElementById("langSwitch");
+        langSwitchBtn?.addEventListener("click", () => {
+            setTimeout(() => {
+                if (modal.classList.contains("show") && currentOpenIndex !== null && currentGalleryName) {
+                    const item = galleries[currentGalleryName][currentOpenIndex];
+                    popupText.textContent = getDescriptionText(item);
+                }
+            }, 0);
+        });
+
+    });
+
+    </script>
+
+</body>
+
+</html>
