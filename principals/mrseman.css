@@ -859,4 +859,14 @@ html[dir="rtl"] body{
 
 }
 
+.menu-btn i {
+        transition: transform .35s ease;
+        display: inline-block;
+    }
+
+    .menu-btn:has(.fa-xmark) i,
+    .menu-btn i.fa-xmark {
+        transform: rotate(180deg);
+    }
+
 

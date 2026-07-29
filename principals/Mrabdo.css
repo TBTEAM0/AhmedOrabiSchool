@@ -634,4 +634,14 @@ header.scrolled .menu-btn {
         max-height: 50vh;
         border-radius: 12px;
     }
+
+    .menu-btn i {
+        transition: transform .35s ease;
+        display: inline-block;
+    }
+
+    .menu-btn:has(.fa-xmark) i,
+    .menu-btn i.fa-xmark {
+        transform: rotate(180deg);
+    }
 }
