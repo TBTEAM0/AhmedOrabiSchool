@@ -574,6 +574,7 @@ const translations = {
 "achievement-abakera": "Al-Abakera",
 "achievement-windows": "New Windows",
 "achievement-quran": "Quran",
+"activity-kg": "KG Parties",
         "achievement-ml": "Renovation of the School Courtyard",
 "activity-quran": "Quran",
         "activity-sfl": "School Football League",
@@ -840,6 +841,8 @@ const translations = {
 "achievement-math": "مسابقة الرياضيات",
 "achievement-childhood": "يوم الطفولة",
 "achievement-camp": "المعسكر المدرسي",
+
+"activity-kg": "حفلات رياض الأطفال",
 
 "activity-desc": "اختر نشاطاً لعرض معرض الصور الخاص به.",
 "activity-dropdown-title":
