@@ -406,6 +406,7 @@ nav ul li a.active::after {
 .feature-card p {
     color: #09aef0;
     line-height: 1.7;
+    font-weight:bold
 }
 
 /* ===========================
@@ -510,6 +511,7 @@ nav ul li a.active::after {
 
 .stat-box p {
     color: #09aef0;
+    font-weight: bold;
 }
 
 /* ===========================
@@ -1212,6 +1214,22 @@ html[dir="rtl"] #navbar ul{
     font-weight: bold;
 }
 
+.thanks {
+
+    color: #ffe600;
+    font-weight: bold;
+    text-align: center;
+
+
+
+}
+
+.thanks h3 {
+    font-size: 20px;
+    color:#f5f4ef;
+    font-weight: bold;
+    font-family: "poppins", sans-serif;
+}
 /* ===========================
    IMAGE MODAL
 =========================== */
@@ -1940,6 +1958,143 @@ html[dir="rtl"] #navbar.active ul{
         display: block;
         width: 100%;
     }
+
+    /* ================= POPUP ================= */
+
+.popup-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+
+    opacity:0;
+    visibility:hidden;
+    transition:.35s;
+}
+
+.popup-overlay.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.popup-box{
+
+    width:min(92%,520px);
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    text-align:center;
+
+    position:relative;
+
+    animation:popupScale .35s ease;
+
+}
+
+.popup-icon{
+
+    font-size:55px;
+
+    margin-bottom:15px;
+
+}
+
+.popup-box h2{
+
+    margin-bottom:15px;
+
+    color:#0b4d9c;
+
+}
+
+.popup-box p{
+
+    color:#555;
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}
+
+.popup-btn{
+
+    border:none;
+
+    background:#0b4d9c;
+
+    color:#fff;
+
+    padding:12px 35px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.popup-btn:hover{
+
+    background:#083a76;
+
+}
+
+.popup-close{
+
+    position:absolute;
+
+    right:15px;
+
+    top:12px;
+
+    border:none;
+
+    background:none;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    color:#666;
+
+}
+
+.popup-close:hover{
+
+    color:red;
+
+}
+
+@keyframes popupScale{
+
+    from{
+
+        transform:scale(.75);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
 
 
 

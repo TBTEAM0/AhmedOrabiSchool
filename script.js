@@ -625,9 +625,14 @@ const translations = {
 "about-value-teamwork-title": "Teamwork",
 "about-value-teamwork-desc": "Showing that the best ideas usually belong to more than one person.",
 
+"thanks-title": "Thanks To",
+"thanks1-name": "Mr. Mohammed Ezzat",
+"thanks2-name": "Mrs. Mona Hafez",
+
 "about-cta-title": "Ready to see A.O.L.S for yourself?",
 "about-cta-desc": "Come meet our teachers, walk through our classrooms, and see where your child's next language begins.",
 "about-cta-btn": "Contact Us",
+
     },
 
     ar: {
@@ -917,6 +922,10 @@ const translations = {
 "about-value-responsibility-desc": "بنعلّم الطلاب يتحملوا نتيجة اختياراتهم، جوه الفصل وبرّه.",
 "about-value-teamwork-title": "العمل الجماعي",
 "about-value-teamwork-desc": "بنوريهم إن أحسن الأفكار غالباً بتكون نتيجة أكتر من شخص.",
+
+"thanks-title": "شكراً لـ",
+"thanks1-name": "أ. محمد عزت",
+"thanks2-name": "أ. منى حافظ",
 
 "about-cta-title": "جاهز تشوف مدرسة احمد عرابي بنفسك؟",
 "about-cta-desc": "تعالى قابل معلمينا، وامشي في فصولنا، وشوف منين رحلة اللغة الجديدة لابنك هتبدأ.",

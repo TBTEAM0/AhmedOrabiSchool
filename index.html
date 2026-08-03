@@ -11,6 +11,35 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     </head>
     <body>
+
+        // اعلان سريع
+
+       <!--<div id="announcementPopup" class="popup-overlay">
+
+    <div class="popup-box">
+
+        <button class="popup-close" id="closePopup">
+            &times;
+        </button>
+
+        <div class="popup-icon">
+            📢
+        </div>
+
+        <h2>Important Announcement</h2>
+
+        <p>
+            Welcome to Ahmed Orabi Official Language School.
+            Stay tuned for our upcoming competitions and events.
+        </p>
+
+        <button class="popup-btn" id="popupOk">
+            OK
+        </button>
+
+    </div>--> 
+
+</div>
         <!-- ================= HEADER ================= -->
         <header class="">
             <a href="index.html" class="logo">A.O.L.S</a>
@@ -95,6 +124,21 @@
                 </div>
             </div>
         </section>
+
+
+      <section class="thanks">
+    <div class="title">
+        <h2 data-i18n="thanks-title">Thanks To</h2>
+         <div class="thanks-card">
+            <h3 data-i18n="thanks1-name">Mr. Mohammed Ezzat</h3>
+        </div>
+
+        <div class="thanks-card">
+            <h3 data-i18n="thanks2-name">Mrs. Mona Hafez</h3>
+        </div>
+
+    </div>
+</section>
         <!-- ================= FEATURES ================= -->
         <section class="features">
             <div class="title">
@@ -259,6 +303,33 @@
                 </a>
             </div>
         </footer>
-        <script src="script.js"></script>
+
+       <script src="script.js"></script>
+
+<script>
+const popup = document.getElementById("announcementPopup");
+const closePopup = document.getElementById("closePopup");
+const popupOk = document.getElementById("popupOk");
+
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        popup.classList.add("show");
+    }, 500);
+});
+
+function hidePopup() {
+    popup.classList.remove("show");
+}
+
+closePopup.onclick = hidePopup;
+popupOk.onclick = hidePopup;
+
+popup.onclick = (e) => {
+    if (e.target === popup) {
+        hidePopup();
+    }
+};
+</script>
+        
     </body>
 </html>
