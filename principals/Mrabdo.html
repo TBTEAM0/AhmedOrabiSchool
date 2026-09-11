@@ -375,6 +375,9 @@ She then completed the Listening and Writing examination at the Goethe-Institut 
 
     };
 
+
+  
+
     let currentGalleryName = null;
     let currentOpenIndex = null;
 
@@ -384,6 +387,8 @@ She then completed the Listening and Writing examination at the Goethe-Institut 
         gallery.innerHTML = "";
 
         if (!galleries[name]) return;
+
+        
 
         const lang = getLang();
         const cardLabel = (translations[lang] && translations[lang]["click-view"]) || "Click To View";
@@ -419,6 +424,8 @@ She then completed the Listening and Writing examination at the Goethe-Institut 
             `;
 
         });
+
+        
 
     }
 
