@@ -919,10 +919,10 @@ const translations = {
 
 
 
-         "mrhesham-title": "إنجازات الأستاذ هشام عبدالمعز",
+         "mrhesham-title": "إنجازات الأستاذ هشام عبدالعظيم",
         "mrhesham-desc": "اختر إنجازا لعرض معرض الصور الخاص به.",
         "hesham-dropdown-title":
-        '<i class="fa-solid fa-images"></i> إنجازات الأستاذ هشام عبدالمعز',
+        '<i class="fa-solid fa-images"></i> إنجازات الأستاذ هشام عبدالعظيم',
 
 "click-view": "اضغط للعرض",
 
