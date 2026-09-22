@@ -678,7 +678,7 @@ const translations = {
         "nav-contact": "تواصل معنا",
 
 
-        "members-title": "مديرا المدرسه",
+        "members-title": "مديري المدرسه",
         "principal1-name": "أ. إيمان عبد الحميد",
         "principal1-role": "مديرة المدرسة السابقة",
         "principal2-name": "أ. عبد الرحمن راشد",
