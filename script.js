@@ -347,10 +347,13 @@ const translations = {
         "members-title":"Our Principals",
 
         "principal1-name": "Mrs. Eman Abdelhamed",
-        "principal1-role": "Current Principal",
+        "principal1-role": "Past Principal",
 
         "principal2-name": "Mr. Abdelrahman Rashed",
         "principal2-role": "Past Principal",
+
+         "principal3-name": "Mr. Hesham Abdelazim",
+        "principal3-role": "Current Principal",
         "view-profile": "View Profile",
 
 
@@ -546,6 +549,38 @@ const translations = {
         "achievement-camp": "School Camp",
 
 
+        "mrhesham-title":"Mr. Hesham Abdelazim Achievements",
+        "mrhesham-desc": "Select an achievement to view its gallery.",
+          "hesham-dropdown-title":
+        '<i class="fa-solid fa-images"></i> Mr. Hesham Abdelazim Achievements',
+        "click-view": "Click To View",
+        "achievement-ramadan": "Ramadan Celebration",
+        "achievement-mothersday": "Mother's Day",
+        "achievement-masjid": "Building a Mosque",
+        "achievement-creator": "Creative Child",
+        "achievement-giza": "Giza Competition",
+        "achievement-football": "Football Competition 2023",
+        "achievement-boxing": "Kick Boxing",
+        "achievement-kgvisits": "KG Visits",
+        "achievement-camera": "School Insurance",
+        "achievement-buildings": "Latest Buildings",
+        "achievement-decoration": "School Decoration",
+        "achievement-agriculture": "School Agriculture",
+        "achievement-honoring": "Honoring",
+        "achievement-honoring-mr": "Honoring Mr. Abdelrahman",
+        "achievement-party": "Party",
+        "achievement-dp": "Dream Park",
+        "achievement-hospital": "57357 Hospital",
+        "achievement-aml": "Amal Mubarak's Visit",
+        "achievement-corridor": "Corridor",
+        "achievement-purplecomet": "Purple Comet",
+        "achievement-deutsch": "German Competition",
+        "achievement-theater": "Theater Competition",
+        "achievement-math": "Mathematics Competition",
+        "achievement-childhood": "Childhood Day",
+        "achievement-camp": "School Camp",
+
+
 
         "activity-title":"Ahmed Orabi Language School Achievements",
         "activity-desc": "Select an Activity to view its gallery",
@@ -645,9 +680,11 @@ const translations = {
 
         "members-title": "مديرا المدرسه",
         "principal1-name": "أ. إيمان عبد الحميد",
-        "principal1-role": "مديرة المدرسة الحالية",
+        "principal1-role": "مديرة المدرسة السابقة",
         "principal2-name": "أ. عبد الرحمن راشد",
         "principal2-role": "مدير المدرسة السابق",
+        "principal3-name": "أ. هشام عبدالعظيم",
+        "principal3-role": "مدير المدرسة الحالي",
         "view-profile": "عرض الملف الشخصي",
 
         "hero-title": `مرحباً بكم في <span>أحمد عرابي الرسميه لغات</span>`,
@@ -865,6 +902,8 @@ const translations = {
         "activity-deutsch": "مسابقة اللغه الالمانيه",
         "activity-purplecomet": "Purple Comet",
         "activity-Chess": "شطرنج",
+
+        
                 "mrseman-title": "إنجازات الأستاذة إيمان عبدالحميد",
 "mrseman-desc": "اختر إنجازا لعرض معرض الصور الخاص به.",
 "mrseman-dropdown-title":
@@ -876,6 +915,63 @@ const translations = {
         "achievement-ml": "تجديد فناء المدرسة",
 "activity-quran": "القرآن الكريم",
         "activity-sfl": "الدوري المدرسي لكرة القدم",
+
+
+
+
+         "mrhesham-title": "إنجازات الأستاذ هشام عبدالمعز",
+        "mrhesham-desc": "اختر إنجازا لعرض معرض الصور الخاص به.",
+        "hesham-dropdown-title":
+        '<i class="fa-solid fa-images"></i> إنجازات الأستاذ هشام عبدالمعز',
+
+"click-view": "اضغط للعرض",
+
+"achievement-ramadan": "احتفالات رمضان",
+"achievement-mothersday": "عيد الأم",
+"achievement-masjid": "بناء المسجد",
+"achievement-creator": "الطفل المبدع",
+"achievement-giza": "مسابقة الجيزة",
+"achievement-football": "بطولة كرة القدم 2023",
+"achievement-boxing": "الكيك بوكسينج",
+"achievement-kgvisits": "زيارات رياض الأطفال",
+"achievement-camera": "تأمين المدرسة",
+"achievement-buildings": "أحدث المباني",
+"achievement-decoration": "تزيين المدرسة",
+"achievement-agriculture": "الزراعة المدرسية",
+"achievement-honoring": "التكريم",
+"achievement-honoring-mr": "تكريم الأستاذ عبدالرحمن",
+"achievement-party": "الحفل",
+"achievement-dp": "دريم بارك",
+"achievement-hospital": "مستشفى 57357",
+"achievement-aml": "زيارة أمل مبارك",
+"achievement-corridor": "الممر",
+"achievement-purplecomet": "مسابقة Purple Comet",
+"achievement-deutsch": "مسابقة اللغة الألمانية",
+"achievement-theater": "المسابقة المسرحية",
+"achievement-math": "مسابقة الرياضيات",
+"achievement-childhood": "يوم الطفولة",
+"achievement-camp": "المعسكر المدرسي",
+
+"activity-kg": "حفلات رياض الأطفال",
+
+"activity-desc": "اختر نشاطاً لعرض معرض الصور الخاص به.",
+"activity-dropdown-title":
+'<i class="fa-solid fa-images"></i> نشاطات مدرسة أحمد عرابي الرسمية لغات',
+"activity-ramadan":"رمضان كريم",
+"activity-em":"جولة تعريفية في المتحف المصري الكبير",
+"activity-nd":"ديكور جديد",
+        "activity-alr": "تنصيب على مستوى الإدارة",
+        "activity-abakera": "العباقره",
+        "competitions-dropdown-title":
+            ' مسابقات مدرسة أحمد عرابي الرسمية لغات',
+        "competition-desc2": "اختر مسابقة لعرض صورها ",
+        
+        "activity-math": "مسابقة الرياضيات ",
+        "activity-deutsch": "مسابقة اللغه الالمانيه",
+        "activity-purplecomet": "Purple Comet",
+        "activity-Chess": "شطرنج",
+
+
 "about-hero-lang-label": "قولها بأي لغة",
 "about-hero-title": "مدرسة بُنيت على <em>الشجاعة واللغة والحرفية</em>",
 "about-hero-subtitle": "مدرسة أحمد عرابي الرسمية لغات تحمل اسم رجل قال الحق بكل كرامة. وإحنا بنعلّم طلابنا يعملوا نفس الحاجة — بالعربي، وبالإنجليزي، وبأي لغة بتفتحلهم باب جديد.",

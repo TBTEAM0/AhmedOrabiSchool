@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Mr. Hesham Abdelazim
+    </title>
+    <link href="../images/Orabi.png" rel="icon" type="image/png" />
+    <link href="../style.css" rel="stylesheet" />
+    <link href="mrhesham.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <!-- ================= IMAGE POPUP ================= -->
+    <div class="image-modal" id="imageModal">
+        <span class="close">
+            ×
+        </span>
+        <div class="modal-content">
+            <img alt="" id="popupImage" src="" />
+            <video controls="" id="popupVideo" style="display:none;">
+                <source src="" type="video/mp4" />
+            </video>
+            <p id="popupText">
+            </p>
+        </div>
+    </div>
+    <!-- ================= HEADER ================= -->
+    <header>
+        <a class="logo" href="../index.html">
+            A.O.L.S
+        </a>
+        <!-- ============================================================ -->
+        <!--  NAV  #navbar  -->
+        <!-- ============================================================ -->
+        <nav id="navbar">
+            <ul>
+                <li>
+                    <a data-i18n="nav-home" href="../index.html">
+                        HOME
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-principals" href="../index.html#members">
+                        PRINCIPALS
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-class" href="../index.html#stage">
+                        CLASS
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-about" href="../pages/about.html">
+                        ABOUT
+                    </a>
+                </li>
+                <li>
+                    <a data-i18n="nav-contact" href="/pages/contact.html">
+                        CONTACT
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <button class="lang-switch" id="langSwitch" type="button">
+                <span class="ls-en">
+                    EN
+                </span>
+                <span class="ls-ar">
+                    AR
+                </span>
+            </button>
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars">
+                </i>
+            </div>
+        </div>
+    </header>
+    <!-- ================= MRABDO ================= -->
+    <section class="mrhesham-activities">
+        <div class="classes-title">
+            <img alt="Mr. Hesham" class="teacher-photo" src="../images/mrhesham.png" />
+            <h2 data-i18n="mrhesham-title">
+                Mr. Hesham Abdelazim Achievements
+            </h2>
+            <p data-i18n="mrhesham-desc">
+                Select an achievement to view its gallery.
+            </p>
+        </div>
+        <!-- ================= DROPDOWN ================= -->
+        <div class="achievement-dropdown">
+            <button class="achievement-btn" id="achievementBtn">
+                <span data-i18n-html="hesham-dropdown-title" id="achievementTitle">
+                    <i class="fa-solid fa-images">
+                    </i>
+                    Mr. Hesham Abdelazim Achievements
+                </span>
+                <i class="fa-solid fa-chevron-down arrow">
+                </i>
+            </button>
+            <div class="achievement-menu" id="achievementMenu">
+                <button data-gallery="Ramadan" data-i18n="achievement-ramadan">
+                    Ramadan Celebration
+                </button>
+                <button data-gallery="MothersDay" data-i18n="achievement-mothersday">
+                    Mother's Day
+                </button>
+                <button data-gallery="Masjid" data-i18n="achievement-masjid">
+                    Building a Mosque
+                </button>
+                <button data-gallery="Thelittlecreator" data-i18n="achievement-creator">
+                    Creative Child
+                </button>
+                <button data-gallery="Kgvisits" data-i18n="achievement-kgvisits">
+                    KG Visits
+                </button>
+                <button data-gallery="camera" data-i18n="achievement-camera">
+                    School Insurance
+                </button>
+                <button data-gallery="Latestbuildings" data-i18n="achievement-buildings">
+                    Latest Buildings
+                </button>
+                <button data-gallery="Schooldecoration" data-i18n="achievement-decoration">
+                    School Decoration
+                </button>
+                <button data-gallery="Schoolagriculture" data-i18n="achievement-agriculture">
+                    School Agriculture
+                </button>
+                <button data-gallery="Honoring" data-i18n="achievement-honoring">
+                    Honoring
+                </button>
+                <button data-gallery="HonoringMrAbdelRahman" data-i18n="achievement-honoring-mr">
+                    Honoring Mr. Abdelrahman
+                </button>
+                <button data-gallery="party" data-i18n="achievement-party">
+                    Party
+                </button>
+                <button data-gallery="dp" data-i18n="achievement-dp">
+                    Dream Park
+                </button>
+                <button data-gallery="Hospital" data-i18n="achievement-hospital">
+                    57357 Hospital
+                </button>
+                <button data-gallery="Corridor" data-i18n="achievement-corridor">
+                    Corridor
+                </button>
+                <button data-gallery="Theatercompetition" data-i18n="achievement-theater">
+                    Theater Competition
+                </button>
+                <button data-gallery="ChildhoodDay" data-i18n="achievement-childhood">
+                    Childhood Day
+                </button>
+                <button data-gallery="camp" data-i18n="achievement-camp">
+                    School Camp
+                </button>
+            </div>
+        </div>
+        <!-- ================= GALLERY ================= -->
+        <div class="championship-gallery" id="galleryContainer">
+            <!-- سيتم إنشاء الكروت تلقائياً بالجافاسكربت -->
+        </div>
+    </section>
+
+<script src="../script.js"></script>
+
+<script>
