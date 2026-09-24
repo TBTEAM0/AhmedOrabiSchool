@@ -554,7 +554,7 @@ const translations = {
           "hesham-dropdown-title":
         '<i class="fa-solid fa-images"></i> Mr. Hesham Abdelazim Achievements',
         "click-view": "Click To View",
-        "achievement-ramadan": "Ramadan Celebration",
+        "achievement-paint": "Painting the School and Classrooms",
         "achievement-mothersday": "Mother's Day",
         "achievement-masjid": "Building a Mosque",
         "achievement-creator": "Creative Child",
@@ -926,7 +926,7 @@ const translations = {
 
 "click-view": "اضغط للعرض",
 
-"achievement-ramadan": "احتفالات رمضان",
+"achievement-paint": "دهان المدرسة والفصول",
 "achievement-mothersday": "عيد الأم",
 "achievement-masjid": "بناء المسجد",
 "achievement-creator": "الطفل المبدع",
