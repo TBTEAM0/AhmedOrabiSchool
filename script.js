@@ -626,7 +626,7 @@ const translations = {
 "about-story-p3": "Today, A.O.L.S exists for the same reason it always has: to hand our students two things at once — fluency in the languages that will carry them anywhere, and a sense of who they are that travels with them wherever they go.",
 
 "about-principal-quote": "We do not measure a school year by the syllabus it covers, but by the confidence it leaves behind. Every child who walks through our gates is trusted with a voice — and our only job is to help them use it, in whichever language they choose.",
-"about-principal-name": "Mrs. Eman Abdelhamed",
+"about-principal-name": "Mr. Hesham Abdelazim",
 "about-principal-title": "School Principal, A.O.L.S",
 
 "about-path-vision-tag": "The direction",
@@ -985,7 +985,7 @@ const translations = {
 "about-story-p3": "النهاردة، مدرسة أحمد عرابي الرسمية لغات موجودة لنفس السبب اللي كانت موجودة عشانه من الأول: نديّ طلابنا حاجتين في نفس الوقت — طلاقة في اللغات اللي هتوصلهم لأي مكان، وإحساس بهويتهم اللي هيفضل معاهم أينما ذهبوا.",
 
 "about-principal-quote": "احنا مابنقيّمش السنة الدراسية بالمنهج اللي اتغطى، لكن بالثقة اللي بتفضل في الطالب بعدها. كل طفل بيدخل من بوابتنا إحنا بنثق فيه بصوته — وشغلنا الوحيد إننا نساعده يستخدمه، بأي لغة يختارها.",
-"about-principal-name": "أ. إيمان عبد الحميد",
+"about-principal-name": "أ.هشام عبدالعظيم",
 "about-principal-title": "مديرة مدرسة، أحمد عرابي الرسميه لغات",
 
 "about-path-vision-tag": "الاتجاه",
