@@ -583,7 +583,7 @@ const translations = {
 
 
 
-        "mrzezo-title":"Some Of Mr. Mohammed Ezaat Achievements",
+        "mrzezo-title":"Some Of Mr. Mohammed Ezzat Achievements",
         "mrzezo-desc": "Select an achievement to view its gallery.",
           "zezo-dropdown-title":
         '<i class="fa-solid fa-images"></i> Mr. Mohammed Ezzat Achievements',
