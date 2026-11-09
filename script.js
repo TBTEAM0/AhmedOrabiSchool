@@ -583,7 +583,7 @@ const translations = {
 
 
 
-        "mrzezo-title":"Mr. Mohammed Ezaat Achievements",
+        "mrzezo-title":"Some Of Mr. Mohammed Ezaat Achievements",
         "mrzezo-desc": "Select an achievement to view its gallery.",
           "zezo-dropdown-title":
         '<i class="fa-solid fa-images"></i> Mr. Mohammed Ezzat Achievements',
@@ -618,7 +618,7 @@ const translations = {
 
       
 
-         "mrsmona-title":"Mrs. Mona Hafez Achievements",
+         "mrsmona-title":"Some Of Mrs. Mona Hafez Achievements",
         "mrsmona-desc": "Select an achievement to view its gallery.",
           "mona-dropdown-title":
         '<i class="fa-solid fa-images"></i> Mrs. Mona Hafez Achievements',
@@ -1034,7 +1034,7 @@ const translations = {
 
 
 
-"mrzezo-title": "إنجازات الأستاذ محمد عزت",
+"mrzezo-title": "بعض من إنجازات الأستاذ محمد عزت",
         "mrzezo-desc": "اختر إنجازا لعرض معرض الصور الخاص به.",
         "zezo-dropdown-title":
         '<i class="fa-solid fa-images"></i> إنجازات الأستاذ محمد عزت',
@@ -1071,7 +1071,7 @@ const translations = {
 "achievement-camp": "المعسكر المدرسي",
 
 
-"mrsmona-title": "إنجازات الأستاذة منى حافظ",
+"mrsmona-title": "بعض من إنجازات الأستاذة منى حافظ",
         "mrsmona-desc": "اختر إنجازا لعرض معرض الصور الخاص به.",
         "mona-dropdown-title":
         '<i class="fa-solid fa-images"></i> إنجازات الأستاذة منى حافظ',
