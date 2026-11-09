@@ -60,9 +60,9 @@
         </div>
 
         <!-- ================= DROPDOWN ================= -->
-         <div class="zezo-dropdown">
+          <div class="activity-dropdown">
             <button class="activity-btn" id="activityBtn">
-                <span data-i18n-html="activity-dropdown-title" id="Activitytitle">
+                <span data-i18n-html="zezo-dropdown-title" id="Activitytitle">
                     <i class="fa-solid fa-images">
                     </i>
                     Mr. Mohammed Ezzat Achievements
@@ -71,11 +71,11 @@
                 </i>
             </button>
             <div class="activity-menu" id="activityMenu">
-                <button data-gallery="FreeDay" data-i18n="activity-freeday">
-                    Sport Day
+                <button data-gallery="sportday" data-i18n="activity-sportday">
+                   Sport Day
                 </button>
 
-                <button data-gallery="safer" data-i18n="activity-safer">
+                  <button data-gallery="safer" data-i18n="activity-safer">
                     Ambassador of Morality
                 </button>
                 
@@ -86,9 +86,6 @@
                 <button data-gallery="karate">Karate</button>
                 <button data-gallery="boxing" data-i18n="activity-boxing">
                     Kick Boxing
-                </button>
-                <button data-gallery="Kgvisits" data-i18n="activity-kgvisits">
-                    KG Visits
                 </button>
 
                 <button data-gallery="em" data-i18n="activity-em">
@@ -111,6 +108,9 @@
 
                 <button data-gallery="kg" data-i18n="activity-kg">
                     KG Parties
+                </button>
+                <button data-gallery="Kgvisits" data-i18n="activity-kgvisits">
+                    KG Visits
                 </button>
                 <button data-gallery="camera" data-i18n="activity-camera">
                     School Insurance
@@ -165,18 +165,15 @@
                 </button> -->
             </div>
         </div>
-        <!-- ================= GALLERY ================= --
-         
-
         <!-- ================= GALLERY ================= -->
         <div class="championship-gallery" id="galleryContainer">
-            <!-- يتم إضافة الصور والكروت ديناميكياً بواسطة JavaScript -->
+            <!-- سيتم إنشاء الكروت تلقائياً بالجافاسكربت -->
         </div>
     </section>
 
     <script src="../script.js"></script>
 
-   <script>
+ <script>
 
     document.addEventListener("DOMContentLoaded", () => {
 
@@ -207,13 +204,14 @@
 
         const galleries = {
 
-            FreeDay: [
+            sportday: [
                 {
                     type: "video",
     src: "../zezoAchive/zezo.mp4",
+                    title: "Sport Day",
     description: {
         en: "Sport Day By Mr. Mohammed Ezzat",
-        ar: "يوم رياضي من قبل السيد محمد عزت"
+        ar: "يوم الرياضة - أ.محمد عزت"
     }
                 }
             ],
@@ -243,13 +241,8 @@
             ],
 
             safer: [
-                { img: "../zezoAchive/safer.jpeg", description: { en: "Ambassador of Morality", ar: "سفير الاخلاق" } },
-              /* { img: "../AolsActivies/alr2.png", description: { en: "Administration-Level Ranking", ar: "تنصيب على مستوى الإدارة" } },
-                { img: "../AolsActivies/alr3.png", description: { en: "Administration-Level Ranking", ar: "تنصيب على مستوى الإدارة" } },
-                { img: "../AolsActivies/alr4.png", description: { en: "Administration-Level Ranking", ar: "تنصيب على مستوى الإدارة" } },
-                { img: "../AolsActivies/alr5.png", description: { en: "Administration-Level Ranking", ar: "تنصيب على مستوى الإدارة" } },
-                { img: "../AolsActivies/alr6.png", description: { en: "Administration-Level Ranking", ar: "تنصيب على مستوى الإدارة" } },
-                { img: "../AolsActivies/alr7.png", description: { en: "Administration-Level Ranking", ar: "تنصيب على مستوى الإدارة" } }*/
+                { img: "../zezoAchive/safer.jpeg", description: { en: "Ambassador of Morality", ar: "سفير الأخلاق - أ.محمد عزت" } },
+               
             ],
 
             quran: [

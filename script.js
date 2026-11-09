@@ -616,7 +616,7 @@ const translations = {
         "achievement-childhood": "Childhood Day",
         "achievement-camp": "School Camp",
 
-
+      
 
          "mrsmona-title":"Mrs. Mona Hafez Achievements",
         "mrsmona-desc": "Select an achievement to view its gallery.",
@@ -657,7 +657,8 @@ const translations = {
         "activity-title2": "Ahmed Orabi Language School Championships",
         "activity-dropdown-title":
         '<i class="fa-solid fa-images"></i> Ahmed Orabi Language School Activities',
-        "activity-ramadan":"Ramadan Kareem",
+        "activity-sportday":"Sport Day",
+        "activity-safer":"Ambassador of Morality",
         "activity-em":"A Tour Of The Grand Egyptian Museum",
         "activity-nd":"New Decor",
         "activity-alr": "Administration-Level Ranking",
@@ -1040,7 +1041,7 @@ const translations = {
 
 "click-view": "اضغط للعرض",
 
-"activity-freeday": "يوم رياضي",
+"activity-sportday": "يوم رياضي",
 "activity-safer": "سفير الاخلاق",
 
 "achievement-paint": "دهان المدرسة والفصول",
