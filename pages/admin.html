@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>School Administration | A.O.L.S</title>
+
+    <link rel="icon" type="image/png" href="../images/Orabi.png">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="admin.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <a class="logo" href="../index.html">
+            A.O.L.S
+        </a>
+
+        <nav id="navbar">
+            <ul>
+
+                <li>
+                    <a data-i18n="nav-home" href="../index.html">
+                        HOME
+                    </a>
+                </li>
+
+                <li>
+                    <a data-i18n="nav-admins"class="active"  href="../pages/admin.html">
+                        ADMINS
+                    </a>
+
+                <li>
+                    <a data-i18n="nav-principals" href="../index.html#members">
+                        PRINCIPALS
+                    </a>
+                </li>
+
+                <li>
+                    <a data-i18n="nav-class" href="../index.html#stage">
+                        CLASS
+                    </a>
+                </li>
+
+                <li>
+                    <a data-i18n="nav-about" href="../pages/about.html">
+                        ABOUT
+                    </a>
+                </li>
+
+                <li>
+                    <a data-i18n="nav-contact" href="../pages/contact.html">
+                        CONTACT
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="header-right">
+
+            <button class="lang-switch" id="langSwitch" type="button">
+                <span class="ls-en">EN</span>
+                <span class="ls-ar">AR</span>
+            </button>
+
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= ADMINISTRATION ================= -->
+
+   <section id="admin" class="members admin-section">
+
+    <h2 class="title" data-i18n="admin-title">Administration</h2>
+
+    <div class="cardss">
+
+
+        <div class="cards">
+            <img src="../images/zezo.jpeg">
+            <h3 data-i18n="admin-secretary-name">Mr.Mohammed Ezzat</h3>
+            <p data-i18n="admin-secretary-role">School Secretary</p>
+          <a href="../admi/zezo.html" data-i18n="view-profile">View Profile</a>
+        </div>
+
+        <div class="cards">
+            <img src="../images/monmon.jpeg">
+            <h3 data-i18n="admin-student-name">Mrs.Mona Hafez</h3>
+            <p data-i18n="admin-student-role">Student Affairs</p>
+            <a href="../admi/manmon.html" data-i18n="view-profile">View Profile</a>
+        </div>
+
+        
+
+    </div>
+
+</section>
+
+
+    <!-- ================= SCRIPTS ================= -->
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>

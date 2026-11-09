@@ -1,0 +1,407 @@
+/* ======================================================================
+   Stage pages — KG / Primary / Preparatory / Secondary
+   ====================================================================== */
+
+:root {
+    --stage-blue: #2563eb;
+    --stage-blue-light: #60a5fa;
+    --stage-blue-dark: #1d4ed8;
+    --stage-gold: #ffe600;
+    --stage-cyan: #09aef0;
+    --stage-glass: rgba(255, 255, 255, 0.14);
+    --stage-glass-border: rgba(255, 255, 255, 0.22);
+    --stage-card-bg: rgba(241, 245, 249, 0.95);
+    --stage-radius: 24px;
+    --stage-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+/* ============================================================
+   PAGE SHELL
+   ============================================================ */
+
+.stage-page {
+    min-height: 100vh;
+    padding: 100px 20px 70px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.52)),
+        url("../images/aols.png") center / cover no-repeat ;
+
+}
+
+
+.stage-badge {
+
+font-weight:bold;
+
+}
+
+
+.stage-wrap {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+
+.stage-breadcrumb {
+    margin-bottom: 28px;
+}
+
+.stage-breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border-radius: 50px;
+    background: var(--stage-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--stage-glass-border);
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stage-breadcrumb a:hover {
+    background: rgba(255, 255, 255, 0.24);
+    transform: translateX(-4px);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+}
+
+html[dir="rtl"] .stage-breadcrumb i {
+    transform: scaleX(-1);
+}
+
+html[dir="rtl"] .stage-breadcrumb a:hover {
+    transform: translateX(4px);
+}
+
+.stage-breadcrumb i {
+    color: var(--stage-gold);
+    font-size: 13px;
+}
+
+/* ============================================================
+   MAIN GLASS PANEL
+   ============================================================ */
+
+.stage-panel {
+    background: var(--stage-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--stage-glass-border);
+    border-radius: 30px;
+    box-shadow: var(--stage-shadow);
+    padding: 48px 44px;
+    overflow: hidden;
+    position: relative;
+}
+
+.stage-panel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--stage-blue),
+        var(--stage-blue-light),
+        var(--stage-blue),
+        transparent
+    );
+    opacity: 0.85;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.stage-hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.stage-icon-wrap {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--stage-blue-dark), var(--stage-blue), var(--stage-blue-light));
+    box-shadow:
+        0 12px 32px rgba(37, 99, 235, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: transform 0.4s ease;
+}
+
+.stage-icon-wrap i {
+    font-size: 42px;
+    color: var(--stage-gold);
+}
+
+.stage-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    margin-bottom: 14px;
+    border-radius: 50px;
+    background: rgba(37, 99, 235, 0.25);
+    border: 1px solid rgba(96, 165, 250, 0.4);
+    color: var(--stage-blue-light);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.stage-hero h1 {
+    font-size: clamp(28px, 5vw, 46px);
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 0%, #dbeafe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.stage-hero > p {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+/* ============================================================
+   HIGHLIGHTS & GRADE GRIDS (cards use .stage-card from style.css)
+   ============================================================ */
+
+.stage-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 44px;
+}
+
+
+.stage-grades-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.stage-grades-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.stage-grades-header p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.subjects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.stage-page .stage-card {
+    position: relative;
+    transition: .3s;
+}
+
+.stage-page .stage-card .grade-num {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.35);
+    transition: .3s;
+}
+.stage-page .stage-card:hover {
+    transform: translateY(-10px);
+}
+
+html[dir="rtl"] .stage-page .stage-card .grade-num {
+    right: auto;
+    left: 16px;
+}
+
+/* ============================================================
+   FOOTER CTA
+   ============================================================ */
+
+.stage-footer {
+    margin-top: 40px;
+    text-align: center;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.stage-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, var(--stage-blue-dark), var(--stage-blue));
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stage-back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(37, 99, 235, 0.5);
+}
+
+.stage-back-btn i {
+    color: var(--stage-gold);
+}
+
+/* ============================================================
+   STAGE MODIFIERS (subtle accent per level)
+   ============================================================ */
+
+.stage-page--kg .stage-badge {
+    background: rgba(245, 158, 11, 0.2);
+    border-color: rgba(251, 191, 36, 0.4);
+    color: #fcd34d;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+}
+
+.stage-page--kg .stage-icon-wrap {
+    background: linear-gradient(135deg, #b45309, #f59e0b, #fbbf24);
+}
+
+.stage-page--primary .stage-icon-wrap {
+    background: linear-gradient(135deg, #0369a1, var(--stage-cyan), #38bdf8);
+}
+
+.stage-page--primary .stage-badge {
+    background: rgba(9, 174, 240, 0.2);
+    border-color: rgba(56, 189, 248, 0.4);
+    color: #7dd3fc;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.stage-page--prep .stage-badge {
+    background: rgba(110, 110, 108, 0.336);
+    border-color: rgba(56, 189, 248, 0.4);
+    color: #7dd3fc;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+}
+
+.stage-page--prep .stage-icon-wrap {
+    background: linear-gradient(135deg, var(--stage-blue-dark), var(--stage-blue), var(--stage-blue-light));
+}
+
+.stage-page--sec .stage-icon-wrap {
+    background: linear-gradient(135deg, #4c1d95, #7c3aed, #a78bfa);
+}
+
+.stage-page--sec .stage-badge {
+    background: rgba(110, 110, 108, 0.336);
+    border-color: rgba(167, 139, 250, 0.4);
+    color: #c4b5fd; 
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+    .stage-highlights {
+        grid-template-columns: repeat(2, 170px); 
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .stage-highlights .stage-card:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 170px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .stage-page {
+        padding: 90px 16px 50px;
+        
+    }
+
+    .stage-panel {
+        padding: 36px 24px;
+        border-radius: 24px;
+    }
+
+    .stage-icon-wrap {
+        width: 80px;
+        height: 80px;
+    }
+
+    .stage-icon-wrap i {
+        font-size: 34px;
+    }
+
+
+ .stage-page--kg .subjects,
+    .stage-page--primary .subjects {
+        grid-template-columns: repeat(2, 170px);
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .stage-page--prep .subjects,
+    .stage-page--sec .subjects {
+        grid-template-columns: repeat(2, 170px);
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .stage-page--prep .subjects .stage-card:last-child,
+    .stage-page--sec .subjects .stage-card:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 170px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .stage-panel {
+        padding: 28px 18px;
+    }
+
+    .stage-hero > p {
+        font-size: 15px;
+    }
+
+    .stage-back-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
