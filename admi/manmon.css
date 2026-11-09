@@ -1,6 +1,4 @@
 /* ======================================================================
-   Mr. Abdelrahman Rashed — principal profile
-   Cleaned & refactored — same selectors, same behavior.
    ======================================================================   */
 
 /* ============================================================
@@ -97,7 +95,7 @@ nav ul li a {
     font-size: 14.5px;
     padding: 8px 18px;
     position: relative;
-    transition: .3s;
+    transition: .2s;
 }
 
 nav ul li a::after {
