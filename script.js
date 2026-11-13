@@ -616,6 +616,8 @@ const translations = {
         "achievement-childhood": "Childhood Day",
         "achievement-camp": "School Camp",
 
+    
+
       
 
          "mrsmona-title":"Some Of Mrs. Mona Hafez Achievements",
@@ -735,6 +737,8 @@ const translations = {
 "admin-secretary-name": "Mr.Mohammed Ezzat",
 "admin-secretary-role": "School Secretary",
 
+"admin-title":"Administrators",
+
 
 
 
@@ -755,6 +759,8 @@ const translations = {
         "nav-about": "من نحن",
         "nav-contact": "تواصل معنا",
         "nav-admins":"الإداريين",
+
+
 
 
         "members-title": "مديري المدرسه",
@@ -1180,6 +1186,7 @@ const translations = {
 "admin-secretary-role": "سكرتير المدرسة",
 
 "admin-title": "الإداريين",
+
 
 
 "thanks2-name": "أ. منى حافظ",
