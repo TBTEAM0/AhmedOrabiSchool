@@ -634,7 +634,7 @@ const translations = {
 
         "footer-title": "A.O.L.S School",
         "footer-copyright": "© 2026 A.O.L.S School. All Rights Reserved",
-        "footer-devby": "Developed By",
+        "footer-devby": "About Developers",
 
         "nav-devs": "DEVS",
 
@@ -1051,7 +1051,7 @@ const translations = {
 
         "footer-title": "مدرسة أحمد عرابي الرسميه لغات",
         "footer-copyright": " © 2026 جميع الحقوق محفوظه الي مدرسه احمد عرابي الرسميه لغات",
-        "footer-devby": "تم التطوير بواسطة",
+        "footer-devby": "عن المطورين",
 
         "nav-devs": "المطورين",
 
