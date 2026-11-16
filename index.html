@@ -14,32 +14,51 @@
 
         // اعلان سريع
 
-       <!--<div id="announcementPopup" class="popup-overlay">
+      
+<!-- ================= ANNOUNCEMENT POPUP ================= -->
+<div class="popup-language">
+    <button class="popup-lang-option active" data-lang="en">EN</button>
+    <button class="popup-lang-option" data-lang="ar">AR</button>
+</div>
+
+<!-- ================= ANNOUNCEMENT POPUP ================= -->
+
+<div id="announcementPopup" class="popup-overlay">
 
     <div class="popup-box">
 
+        <!-- Language Switch -->
+        <div class="popup-language">
+            <button type="button" class="popup-lang-option active" data-lang="en">EN</button>
+            <button type="button" class="popup-lang-option" data-lang="ar">AR</button>
+        </div>
+
+        <!-- Close Button -->
         <button class="popup-close" id="closePopup">
             &times;
         </button>
 
+        <!-- Icon -->
         <div class="popup-icon">
-            📢
+            💖
         </div>
 
-        <h2>Important Announcement</h2>
+        <!-- Title -->
+        <h2 id="popupTitle">A Farewell Message</h2>
 
-        <p>
-            Welcome to Ahmed Orabi Official Language School.
-            Stay tuned for our upcoming competitions and events.
-        </p>
+        <!-- Message -->
+        <div id="popupMessage"></div>
 
+        <!-- OK Button -->
         <button class="popup-btn" id="popupOk">
             OK
         </button>
 
-    </div>--> 
+    </div>
 
 </div>
+
+
         <!-- ================= HEADER ================= -->
         <header class="">
             <a href="index.html" class="logo">A.O.L.S</a>
@@ -136,7 +155,6 @@
                 </div>
            
         </section>
-
         
 
       <section class="thanks">
@@ -343,6 +361,91 @@ popup.onclick = (e) => {
     }
 };
 </script>
+
+
+<script>
+/* ================= POPUP LANGUAGE SYSTEM ================= */
+
+const popup = document.getElementById("announcementPopup");
+const closePopup = document.getElementById("closePopup");
+const popupOk = document.getElementById("popupOk");
+
+const popupLanguages = document.querySelectorAll(".popup-lang-option");
+
+const popupTranslations = {
+    en: {
+        title: "Important Announcement",
+        message: "Welcome to Ahmed Orabi Official Language School. Stay tuned for our upcoming competitions and events.",
+        ok: "OK"
+    },
+
+    ar: {
+        title: "إعلان هام",
+        message: "مرحباً بكم في مدرسة أحمد عرابي الرسمية للغات. ترقبوا المسابقات والفعاليات القادمة الخاصة بنا.",
+        ok: "حسناً"
+    }
+};
+
+/* Change Popup Language */
+
+popupLanguages.forEach(button => {
+
+    button.addEventListener("click", function () {
+
+        const lang = this.dataset.lang;
+        const translation = popupTranslations[lang];
+
+        document.getElementById("popupTitle").textContent = translation.title;
+        document.getElementById("popupMessage").textContent = translation.message;
+        popupOk.textContent = translation.ok;
+
+        document.getElementById("popupTitle").dir = lang === "ar" ? "rtl" : "ltr";
+        document.getElementById("popupMessage").dir = lang === "ar" ? "rtl" : "ltr";
+
+        document.getElementById("popupTitle").style.fontFamily =
+            lang === "ar" ? "'Cairo', sans-serif" : "'Poppins', sans-serif";
+
+        document.getElementById("popupMessage").style.fontFamily =
+            lang === "ar" ? "'Cairo', sans-serif" : "'Poppins', sans-serif";
+
+        document.getElementById("popupTitle").style.textAlign =
+            lang === "ar" ? "right" : "left";
+
+        document.getElementById("popupMessage").style.textAlign =
+            lang === "ar" ? "right" : "left";
+
+        popupLanguages.forEach(option => {
+            option.classList.toggle("active", option === this);
+        });
+
+    });
+
+});
+
+/* Show Popup */
+
+window.addEventListener("load", () => {
+    setTimeout(() => {
+        popup.classList.add("show");
+    }, 500);
+});
+
+/* Close Popup */
+
+function hidePopup() {
+    popup.classList.remove("show");
+}
+
+closePopup.onclick = hidePopup;
+popupOk.onclick = hidePopup;
+
+popup.onclick = (e) => {
+    if (e.target === popup) {
+        hidePopup();
+    }
+};
+</script>
+
         
     </body>
 </html>

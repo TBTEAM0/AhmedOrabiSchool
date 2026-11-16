@@ -177,6 +177,233 @@ if (stageIconWrap) {
 }
 
 
+/* ======================================================
+   AHMED ORABI SCHOOL - FAREWELL ANNOUNCEMENT
+   ENGLISH / ARABIC LANGUAGE SYSTEM
+====================================================== */
+
+
+(function () {
+
+    function initAnnouncementPopup() {
+
+        const popup = document.getElementById("announcementPopup");
+
+        if (!popup) return;
+
+        const closeBtn = popup.querySelector("#closePopup");
+        const okBtn = popup.querySelector("#popupOk");
+        const title = popup.querySelector("#popupTitle");
+        const message = popup.querySelector("#popupMessage");
+        const popupBox = popup.querySelector(".popup-box");
+
+        const langButtons = popup.querySelectorAll(".popup-lang-option");
+
+        // ================= MESSAGES =================
+
+        const translations = {
+
+            en: {
+                title: "A Farewell Message",
+
+                message: `
+                    <h3>A Farewell to Two of the Greatest Educators in Ahmed Orabi School's History ❤️</h3>
+
+                    <p>
+                    Some people are more than just teachers. They become family, a source of support, inspiration, and unforgettable memories.
+                    </p>
+
+                    <p>
+                    Today, we say goodbye to two of the most remarkable people who have ever been part of Ahmed Orabi Official Language School:
+                    </p>
+
+                    <h3 class="farewell-names">
+                        Mr. Mohamed Ezzat<br>
+                        & Mrs. Mona Hafez
+                    </h3>
+
+                    <p>
+                    Thank you for everything you have given to our school, for every effort you have made, and for every moment you dedicated to making this place better.
+                    </p>
+
+                    <p>
+                    Thank you for every day you stood beside us, not only as teachers, but as a father and a mother before anything else. You were always there to guide us, support us, encourage us, and make us feel that we were never alone.
+                    </p>
+
+                    <p>
+                    Thank you for the lessons that went beyond textbooks, for the kindness that touched our hearts, for the patience you showed, and for all the beautiful memories we will carry with us forever.
+                    </p>
+
+                    <p>
+                    Words will never be enough to express how grateful we are for everything you have done. Your impact will never be forgotten, and your legacy will always remain a part of this school's history.
+                    </p>
+
+                    <p>
+                    You may be leaving the school, but you will never leave our hearts, minds, or memories. You will always have a special place in the story of Ahmed Orabi School.
+                    </p>
+
+                    <h3>
+                    Thank you from the bottom of our hearts. ❤️
+                    </h3>
+
+                    <p class="farewell-ending">
+                    Once a part of Ahmed Orabi, always a part of its family.
+                    </p>
+                `,
+
+                ok: "OK"
+            },
+
+            ar: {
+                title: "رسالة وداع من القلب",
+
+                message: `
+                    <h3>وداعًا لأعظم شخصين في تاريخ مدرسة أحمد عرابي ❤️</h3>
+
+                    <p>
+                    هناك أشخاص لا يمكن وصفهم بمجرد مدرسين، لأنهم أصبحوا عائلة ومصدر أمان ودعم وإلهام وذكريات لا تُنسى.
+                    </p>
+
+                    <p>
+                    اليوم بنودّع شخصين من أعظم الشخصيات اللي مرّت في تاريخ مدرسة أحمد عرابي الرسمية للغات:
+                    </p>
+
+                    <h3 class="farewell-names">
+                        مستر محمد عزت<br>
+                        وميس منى حافظ
+                    </h3>
+
+                    <p>
+                    شكرًا على كل حاجة قدمتوها لمدرستنا، وعلى كل مجهود بذلتوه، وعلى كل لحظة خصصتوها علشان المكان ده يكون أفضل.
+                    </p>
+
+                    <p>
+                    شكرًا على كل يوم كنتوا فيه جنبنا، مش مجرد مدرسين، لكن أب وأم قبل أي حاجة تانية. كنتوا دايمًا موجودين توجهونا وتدعمونا وتشجعونا وتحسسونا إننا عمرنا ما كنا لوحدنا.
+                    </p>
+
+                    <p>
+                    شكرًا على كل درس اتعلمناه منكم وكان أكبر من مجرد كلام في كتاب، وعلى طيبتكم اللي لمست قلوبنا، وصبركم علينا، وكل ذكرى جميلة هنفضل شايلينها معانا طول العمر.
+                    </p>
+
+                    <p>
+                    مهما كتبنا من كلام مش هيكون كفاية علشان نعبر عن امتناننا لكل اللي قدمتوه. أثركم عمره ما هيتنسي، وبصمتكم هتفضل جزء من تاريخ المدرسة.
+                    </p>
+
+                    <p>
+                    ممكن تكونوا بتسيبوا المدرسة، لكن عمركم ما هتسيبوا قلوبنا أو عقولنا أو ذكرياتنا. وهتفضلوا دايمًا جزء مميز من حكاية مدرسة أحمد عرابي.
+                    </p>
+
+                    <h3>
+                    شكرًا ليكم من القلب، وهتفضلوا دايمًا في ذاكرتنا ومحل تقديرنا وحبنا. ❤️
+                    </h3>
+
+                    <p class="farewell-ending">
+                    اللي كان يوم من عيلة أحمد عرابي، هيفضل دايمًا جزء منها.
+                    </p>
+                `,
+
+                ok: "حسناً"
+            }
+
+        };
+
+        // ================= CHANGE LANGUAGE =================
+
+        function setLanguage(lang) {
+
+            const data = translations[lang];
+
+            if (!data) return;
+
+            const isArabic = lang === "ar";
+
+            title.textContent = data.title;
+            message.innerHTML = data.message;
+            okBtn.textContent = data.ok;
+
+            popup.dir = isArabic ? "rtl" : "ltr";
+
+            // Arabic / English fonts
+           
+
+            // Apply Arabic class for CSS customization if needed
+            popup.classList.toggle("arabic", isArabic);
+
+            title.style.textAlign = "center";
+
+            message.style.textAlign = isArabic ? "right" : "left";
+            message.dir = isArabic ? "rtl" : "ltr";
+
+            langButtons.forEach(button => {
+
+                button.classList.toggle(
+                    "active",
+                    button.dataset.lang === lang
+                );
+
+            });
+
+        }
+
+        // ================= LANGUAGE BUTTONS =================
+
+        langButtons.forEach(button => {
+
+            button.addEventListener("click", function () {
+
+                setLanguage(this.dataset.lang);
+
+            });
+
+        });
+
+        // ================= CLOSE POPUP =================
+
+        function hidePopup() {
+            popup.classList.remove("show");
+        }
+
+        closeBtn?.addEventListener("click", hidePopup);
+        okBtn?.addEventListener("click", hidePopup);
+
+        popup.addEventListener("click", function (e) {
+
+            if (e.target === popup) {
+                hidePopup();
+            }
+
+        });
+
+        // ================= INITIAL LANGUAGE =================
+
+        setLanguage("en");
+
+        // ================= SHOW POPUP =================
+
+        setTimeout(() => {
+            popup.classList.add("show");
+        }, 500);
+
+    }
+
+    if (document.readyState === "loading") {
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            initAnnouncementPopup,
+            { once: true }
+        );
+
+    } else {
+
+        initAnnouncementPopup();
+
+    }
+
+})();
+
+
+
 /* ===========================
    COUNTER ANIMATION (EASED)
 =========================== */
