@@ -565,6 +565,7 @@ const translations = {
         "nav-class":"STAGES",
         "nav-about": "ABOUT",
         "nav-contact": "CONTACT",
+        "nav-developers": "DEVELOPERS",
 
         "hero-title": `Welcome To <span>A.O.L. School</span>`,
         "hero-desc": "Building Future Leaders Through Quality Education, Innovation, and Excellence.",
@@ -986,6 +987,9 @@ const translations = {
         "nav-about": "من نحن",
         "nav-contact": "تواصل معنا",
         "nav-admins":"الإداريين",
+         "nav-developers": "المطورون",
+
+         
 
 
 
