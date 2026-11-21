@@ -581,9 +581,9 @@ const translations = {
         "principal2-name": "Mr. Abdelrahman Rashed",
         "principal2-role": "Past Principal",
 
-         "principal3-name": "Mr. Hesham Abdelazim",
-        "principal3-role": "Current Principal",
-        "view-profile": "View Profile",
+         "principal3-name": "Unknown",
+        "principal3-role": "Soon Principal",
+        "view-profile": "View Profile", 
 
 
 
@@ -999,8 +999,8 @@ const translations = {
         "principal1-role": "مديرة المدرسة السابقة",
         "principal2-name": "أ. عبد الرحمن راشد",
         "principal2-role": "مدير المدرسة السابق",
-        "principal3-name": "أ. هشام عبدالعظيم",
-        "principal3-role": "مدير المدرسة الحالي",
+        "principal3-name": "غير معروف",
+        "principal3-role": "قريباً سيتم الإعلان عن المدير الحالي",
         "view-profile": "عرض الملف الشخصي",
 
         "hero-title": `مرحباً بكم في <span>أحمد عرابي الرسميه لغات</span>`,
